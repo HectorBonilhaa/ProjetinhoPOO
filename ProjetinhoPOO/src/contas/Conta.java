@@ -1,6 +1,6 @@
 package contas;
 
-public class Conta 
-{
-	//DESGRAÇAAAAAAAAAAAAAAAAAAAAAA
-}
+import cliente.Cliente;
+
+public class Conta extends Cliente
+{}
