@@ -1,5 +1,6 @@
 package funcionario;
 
-public class Diretor {
+public class Diretor extends Funcionario 
+{
 
 }
