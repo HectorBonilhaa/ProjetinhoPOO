@@ -11,10 +11,10 @@ public class Gerente extends Funcionario
 	}
 
 
-	public Gerente(String nome, String cpf, String senha, String cargo) 
+	public Gerente(String nome, String cpf, String senha, String funcao) 
 	{
 		super(nome, cpf, senha);
-		cargo = "GERENTE";
+		cargo = funcao;
 	}
 
 
