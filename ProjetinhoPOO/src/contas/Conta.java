@@ -25,8 +25,6 @@ public abstract class Conta extends Cliente {
 
 		this.agencia = agencia;
 
-		
-
 	}
 
 	public static int getContadorDeContas() {
@@ -56,8 +54,6 @@ public abstract class Conta extends Cliente {
 	public void setAgencia(int agencia) {
 		this.agencia = agencia;
 	}
-
-	
 
 	public Double getTarifasSaque() {
 		return tarifasSaque;
@@ -89,13 +85,13 @@ public abstract class Conta extends Cliente {
 
 	@Override
 	public String toString() {
-		return "Conta [numeroConta=" + numeroConta + ", \nsaldo=" + saldo + ", \nagencia=" + agencia + "\ngetNome()=" + getNome() + ", \ngetCpf()=" + getCpf()
-				+ ", \ngetSenha()=" + getSenha() + "]";
+		return "Conta [numeroConta=" + numeroConta + ", \nsaldo=" + saldo + ", \nagencia=" + agencia + "\ngetNome()="
+				+ getNome() + ", \ngetCpf()=" + getCpf() + ", \ngetSenha()=" + getSenha() + "]";
 	}
 
 	public void depositar(Double valor) {
 		if (valor > 0) {
-			setSaldo(getSaldo() + valor - tarifa);
+			setSaldo(getSaldo() + valor - tarifasDeposito);
 			System.out.println("Depósito realizado com sucesso!");
 		} else {
 			System.out.println("Depósito não realizado!");
@@ -105,8 +101,8 @@ public abstract class Conta extends Cliente {
 	}
 
 	public void sacar(Double valor) {
-		if (valor > 0 && this.getSaldo() >= valor) {
-			setSaldo(getSaldo() - valor - tarifa);
+		if (valor > 0 && this.getSaldo() >= valor + tarifasSaque) {
+			setSaldo(getSaldo() - valor - tarifasSaque);
 			System.out.println("Saque realizado com sucesso!");
 		} else {
 			System.out.println("Não foi possível realizar o saque!");
@@ -114,8 +110,8 @@ public abstract class Conta extends Cliente {
 	}
 
 	public void transferir(Conta contaParaDeposito, Double valor) {
-		if (valor > 0 && this.getSaldo() >= valor) {
-			setSaldo(getSaldo() - valor - 0.20);
+		if (valor > 0 && this.getSaldo() >= valor + tarifaTransferir) {
+			setSaldo(getSaldo() - valor - tarifaTransferir);
 
 			contaParaDeposito.saldo = contaParaDeposito.getSaldo() + valor;
 			System.out.println("Transferência realizada com sucesso!");
