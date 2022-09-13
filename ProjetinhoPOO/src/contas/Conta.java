@@ -2,18 +2,19 @@ package contas;
 
 import cliente.Cliente;
 
-abstract class Conta extends Cliente {
+public abstract class Conta extends Cliente {
 
 	private static int contadorDeContas = 1;
 
 	private int numeroConta;
 	private Double saldo = 0.0;
 	private int agencia;
-	private Double tarifas;
+	private Double tarifasSaque = 0.10;
+	private Double tarifasDeposito = 0.10;
+	private Double tarifaTransferir = 0.20;
 	private String TIPOU;
 
-	public Conta(String nome, String cpf, String senha, int numeroConta, Double saldo, int agencia, Double tarifas,
-			String TIPOU) {
+	public Conta(String nome, String cpf, String senha, int numeroConta, Double saldo, int agencia) {
 
 		super(nome, cpf, senha);
 
@@ -24,7 +25,7 @@ abstract class Conta extends Cliente {
 
 		this.agencia = agencia;
 
-		this.tarifas = tarifas;
+		
 
 	}
 
@@ -38,10 +39,6 @@ abstract class Conta extends Cliente {
 
 	public int getNumeroConta() {
 		return numeroConta;
-	}
-
-	public void setNumeroConta(int numeroConta) {
-		this.numeroConta = numeroConta;
 	}
 
 	public Double getSaldo() {
@@ -60,12 +57,30 @@ abstract class Conta extends Cliente {
 		this.agencia = agencia;
 	}
 
-	public Double getTarifas() {
-		return tarifas;
+	
+
+	public Double getTarifasSaque() {
+		return tarifasSaque;
 	}
 
-	public void setTarifas(Double tarifas) {
-		this.tarifas = tarifas;
+	public void setTarifasSaque(Double tarifasSaque) {
+		this.tarifasSaque = tarifasSaque;
+	}
+
+	public Double getTarifasDeposito() {
+		return tarifasDeposito;
+	}
+
+	public void setTarifasDeposito(Double tarifasDeposito) {
+		this.tarifasDeposito = tarifasDeposito;
+	}
+
+	public Double getTarifaTransferir() {
+		return tarifaTransferir;
+	}
+
+	public void setTarifaTransferir(Double tarifaTransferir) {
+		this.tarifaTransferir = tarifaTransferir;
 	}
 
 	public String getTIPOU() {
@@ -74,14 +89,13 @@ abstract class Conta extends Cliente {
 
 	@Override
 	public String toString() {
-		return "Conta [numeroConta=" + numeroConta + ", \nsaldo=" + saldo + ", \nagencia=" + agencia + ", \ntarifas="
-				+ tarifas + ", \nTIPOU=" + TIPOU + ", \ngetNome()=" + getNome() + ", \ngetCpf()=" + getCpf()
+		return "Conta [numeroConta=" + numeroConta + ", \nsaldo=" + saldo + ", \nagencia=" + agencia + "\ngetNome()=" + getNome() + ", \ngetCpf()=" + getCpf()
 				+ ", \ngetSenha()=" + getSenha() + "]";
 	}
 
 	public void depositar(Double valor) {
 		if (valor > 0) {
-			setSaldo(getSaldo() + valor - 0.10);
+			setSaldo(getSaldo() + valor - tarifa);
 			System.out.println("Depósito realizado com sucesso!");
 		} else {
 			System.out.println("Depósito não realizado!");
@@ -92,7 +106,7 @@ abstract class Conta extends Cliente {
 
 	public void sacar(Double valor) {
 		if (valor > 0 && this.getSaldo() >= valor) {
-			setSaldo(getSaldo() - valor - 0.10);
+			setSaldo(getSaldo() - valor - tarifa);
 			System.out.println("Saque realizado com sucesso!");
 		} else {
 			System.out.println("Não foi possível realizar o saque!");

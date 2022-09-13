@@ -3,28 +3,29 @@ package contas;
 public class ContaPoupanca extends Conta {
 
 	private String TIPOU;
-	private String TIPOP = "CONTA POUPANCA";
+	private String TIPOC = "CONTA POUPANCA";
+
+	
 
 	public ContaPoupanca(String nome, String cpf, String senha, int numeroConta, Double saldo, int agencia) {
-
-		super(nome, cpf, senha, numeroConta, saldo, agencia, tarifas);
-
+		super(nome, cpf, senha, numeroConta, saldo, agencia);
 	}
 
-	@Override
-	public String toString() {
-		return "ContaCorrente [getNumeroConta()=" + getNumeroConta() + ", \ngetSaldo()=" + getSaldo()
-				+ ", \ngetAgencia()=" + getAgencia() + ", \ngetTarifas()=" + getTarifas() + ", \ntoString()="
-				+ super.toString() + ", \ngetNome()=" + getNome() + ", \ngetCpf()=" + getCpf() + ", \ngetSenha()="
-				+ getSenha() + "]";
-	}
+
 
 	public String getTIPOU() {
 		return TIPOU;
 	}
 
-	public String getTIPOP() {
-		return TIPOP;
+	public String getTIPOC() {
+		return TIPOC;
+	}
+
+	@Override
+	public String toString() {
+		return "ContaPoupanca [TIPOU=" + TIPOU + ", TIPOC=" + TIPOC + ", getNumeroConta()=" + getNumeroConta()
+				+ ", getSaldo()=" + getSaldo() + ", getAgencia()=" + getAgencia() + ", getNome()=" + getNome()
+				+ ", getCpf()=" + getCpf() + ", getSenha()=" + getSenha() + "]";
 	}
 
 }
