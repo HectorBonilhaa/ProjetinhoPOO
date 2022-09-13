@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import contas.Conta;
@@ -10,17 +11,9 @@ import funcionario.Funcionario;
 public class menu 
 {
 	static Scanner input = new Scanner(System.in);
-	static ArrayList<Conta> contasBancarias;	
-	Conta contas = new ArrayList<Conta>();
-	
-	public static void menuDiretor()
-	{}
-	
-	public static void menuGerente()
-	{}
-	
-	public static void menuPresidente()
-	{}
+		
+	List<Conta> contas = new ArrayList<>();
+
 	
 	public static void main(String[] args)
 	{
@@ -57,11 +50,11 @@ public class menu
 		
 		switch(contaUsuario.getTIPOU)
 		{
-			case DIRETOR.name: menuDiretor();
+		
+		case GERENTE.name: menuGerente();
+	       					   break;
+			case DIRETOR.name:  menuDiretor ();
 			    		       break;
-			    		  
-			case GERENTE.name: menuGerente();
-						       break;
 						  
 			case PRESIDENTE.name: menuPresidente();
 				                  break;
