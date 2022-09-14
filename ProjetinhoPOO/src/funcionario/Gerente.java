@@ -7,18 +7,20 @@ import contas.Conta;
 public class Gerente extends Funcionario
 {
 	protected String cargo = "GERENTE";
-	private String agencia;
+	private int agencia;
 	
-	public Gerente(String nome, String cpf, String senha) 
-	{
-	super(nome, cpf, senha);
+	
+
+	public Gerente() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public Gerente(String nome, String cpf, String senha, String funcao, String idAgencia) 
-	{
+
+	public Gerente(String nome, String cpf, String senha, int ag) {
 		super(nome, cpf, senha);
-		this.cargo = funcao;
-		this.agencia = idAgencia;
+		this.agencia = ag;
+		
 	}
 
 

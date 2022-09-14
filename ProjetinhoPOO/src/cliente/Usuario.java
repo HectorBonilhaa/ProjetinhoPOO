@@ -1,11 +1,18 @@
 package cliente;
 
-public class Cliente extends Usuario {
+public abstract class Usuario {
 	private String nome;
 	private String cpf;
 	private String senha;
+	
 
-	public Cliente(String nome, String cpf, String senha) {
+	public Usuario() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Usuario(String nome, String cpf, String senha) {
+		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.senha = senha;
@@ -40,7 +47,4 @@ public class Cliente extends Usuario {
 		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", senha=" + senha + ", getNome()=" + getNome()
 				+ ", getCpf()=" + getCpf() + ", getSenha()=" + getSenha() + "]";
 	}
-	
-	
-
 }
