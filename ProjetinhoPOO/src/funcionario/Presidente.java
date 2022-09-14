@@ -4,28 +4,29 @@ import java.util.Scanner;
 
 import cliente.Cliente;
 import contas.Conta;
+import enums.PessoaEnum;
+
 
 public class Presidente extends Diretor {
 
-	private String cargo = "PRESIDENTE";
+	private PessoaEnum cargo;
 
 	public Presidente() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public Presidente(String nome, String cpf, String senha, int ag) {
-		super(nome, cpf, senha, ag);
-		// TODO Auto-generated constructor stub
+		super(nome, cpf, senha, senha, ag);
+		this.cargo = PessoaEnum.PRESIDENTE;
 	}
 
-	public String getCargo() {
+
+	public PessoaEnum getCargo() {
 		return cargo;
 	}
 
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
-	}
 
 	@Override
 	public String toString() {
@@ -33,14 +34,15 @@ public class Presidente extends Diretor {
 				+ ", getSenha()=" + getSenha() + "]";
 	}
 
-	public static void cmenuPresidente(Conta contaUsuario) {
+	@Override
+	public void menu() {
 
 		Scanner leitor = new Scanner(System.in);
 		int opcao = 0;
 		int x = 0;
 
 		do {
-			System.out.println("**********Bem Vindo " + contaUsuario.getNome() + "**********");
+			System.out.println("**********Bem Vindo " + getNome() + "**********");
 			System.out.println("-----------------------------------------");
 			System.out.println("-----------------------------------------");
 			System.out.println("------------------MENU------------------");

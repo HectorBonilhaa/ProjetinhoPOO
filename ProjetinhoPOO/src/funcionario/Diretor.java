@@ -4,29 +4,31 @@ import java.util.Scanner;
 
 import cliente.Cliente;
 import contas.Conta;
+import enums.PessoaEnum;
 
 public class Diretor extends Gerente
 
 {
-	private String cargo = "DIRETOR";
+	private PessoaEnum cargo;
 
 	public Diretor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Diretor(String nome, String cpf, String senha, int ag) {
-		super(nome, cpf, senha, ag);
-		// TODO Auto-generated constructor stub
+	
+
+	public Diretor(String nome, String cpf, String senha, String userTipo, int agencia) {
+		super(nome, cpf, senha, userTipo, agencia);
+		this.cargo = PessoaEnum.DIRETOR;
 	}
 
-	public String getCargo() {
+
+
+	public PessoaEnum getCargo() {
 		return cargo;
 	}
 
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
-	}
 
 	@Override
 	public String toString() {
@@ -34,14 +36,14 @@ public class Diretor extends Gerente
 				+ ", getSenha()=" + getSenha() + ", toString()=" + super.toString() + "]";
 	}
 
-	public static void menuDiretor(Conta contaUsuario) {
+	public void menu() {
 
 		Scanner leitor = new Scanner(System.in);
 		int opcao = 0;
 		int x = 0;
 
 		do {
-			System.out.println("**********Bem Vindo " + contaUsuario.getNome() + "**********");
+			System.out.println("**********Bem Vindo " + getNome() + "**********");
 			System.out.println("-----------------------------------------");
 			System.out.println("-----------------------------------------");
 			System.out.println("------------------MENU------------------");

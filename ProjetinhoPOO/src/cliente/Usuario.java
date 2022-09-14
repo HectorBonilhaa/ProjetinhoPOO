@@ -4,6 +4,7 @@ public abstract class Usuario {
 	private String nome;
 	private String cpf;
 	private String senha;
+	private String tipo;
 	
 
 	public Usuario() {
@@ -11,15 +12,16 @@ public abstract class Usuario {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(String nome, String cpf, String senha) {
+	public Usuario(String nome, String cpf, String senha, String userTipo) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.senha = senha;
+		this.tipo = userTipo;
 	}
 
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	public void setNome(String nome) {
@@ -46,5 +48,9 @@ public abstract class Usuario {
 	public String toString() {
 		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", senha=" + senha + ", getNome()=" + getNome()
 				+ ", getCpf()=" + getCpf() + ", getSenha()=" + getSenha() + "]";
+	}
+	
+	public void menu() {
+		
 	}
 }

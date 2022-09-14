@@ -1,29 +1,36 @@
 package funcionario;
 
 import cliente.Usuario;
+import enums.PessoaEnum;
 
 public abstract class Funcionario extends Usuario {
 	
-	private String cargo;
+	private PessoaEnum cargo;
 	
 	public Funcionario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Funcionario(String nome, String cpf, String senha) {
-		super(nome, cpf, senha);
-		
-	}
+	
 	
 
-	public String getCargo() {
+	public Funcionario(String nome, String cpf, String senha, String userTipo) {
+		super(nome, cpf, senha, userTipo);
+		this.cargo = PessoaEnum.FUNCIONARIO;
+	}
+
+
+
+
+	public PessoaEnum getCargo() {
 		return cargo;
 	}
 
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
-	}
-
 	
+	
+	@Override
+	public void menu() {
+		
+	}
 }
