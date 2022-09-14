@@ -1,8 +1,10 @@
 package funcionario;
 
+import java.util.List;
 import java.util.Scanner;
 
 import cliente.Cliente;
+import cliente.Usuario;
 import contas.Conta;
 import enums.PessoaEnum;
 
@@ -87,8 +89,10 @@ public class Diretor extends Gerente
 			case 7:
 				break;
 
-			case 8:
+			case 8: informacaoClientes(conta, u, usuario, 
+					contasBanco);
 				break;
+				
 			case 9:
 				break;
 
