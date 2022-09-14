@@ -54,14 +54,13 @@ public class Diretor extends Gerente
 			System.out.println("\n");
 
 			System.out.println(" Relatórios ");
-			System.out.println("4- Saldo ");
+			System.out.println("4- Consultar saldo ");
 			System.out.println("5- Relatório de tributação da conta corrente");
 			System.out.println("6- Relatório de Rendimento da poupança ");
 			System.out.println("7- Relatório do número contas ");
 
-			System.out.println("8- informações(Contas) ");
-			System.out.println("\n");
-			System.out.println("                       9- Sair                                                  ");
+			System.out.println("8- Mostrar informações das contas ");			
+			System.out.println("9- Sair");
 
 			System.out.println("\n");
 			opcao = leitor.nextInt();
