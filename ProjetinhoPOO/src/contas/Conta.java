@@ -1,49 +1,49 @@
 package contas;
 
-import cliente.Cliente;
+public abstract class Conta implements Tributos {
 
-public abstract class Conta extends Cliente {
+	// Variáveis //
 
-	private static int contadorDeContas = 1;
-
-	private int numeroConta;
-	private Double saldo = 0.0;
+	private String cpf;
+	private double saldo;
 	private int agencia;
-	private Double tarifasSaque = 0.10;
-	private Double tarifasDeposito = 0.10;
-	private Double tarifaTransferir = 0.20;
-	private String TIPOU;
+	private String tipo;
+	private int numContas = 1;
+	static int totalAgencia1 = 0;
+	static int totalAgencia2 = 0;
+	private double totalTributos = 0.0;
 
-	public Conta(String nome, String cpf, String senha, int numeroConta, Double saldo, int agencia) {
+	// Construtores //
 
-		super(nome, cpf, senha);
+	public Conta() {
+		super();
+	}
 
-		this.numeroConta = contadorDeContas;
-		contadorDeContas += 1;
-
+	public Conta(String cpf, double saldo, int agencia, String tipo, int numContas) {
+		super();
+		this.cpf = cpf;
 		this.saldo = saldo;
-
 		this.agencia = agencia;
-
+		this.tipo = tipo;
+		this.numContas += numContas;
+		numContas++;
 	}
 
-	public static int getContadorDeContas() {
-		return contadorDeContas;
+	// Getters and Setters //
+
+	public String getCpf() {
+		return cpf;
 	}
 
-	public static void setContadorDeContas(int contadorDeContas) {
-		Conta.contadorDeContas = contadorDeContas;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
-	public int getNumeroConta() {
-		return numeroConta;
-	}
-
-	public Double getSaldo() {
+	public double getSaldo() {
 		return saldo;
 	}
 
-	public void setSaldo(Double saldo) {
+	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 
@@ -53,71 +53,67 @@ public abstract class Conta extends Cliente {
 
 	public void setAgencia(int agencia) {
 		this.agencia = agencia;
+		if (agencia == 001) {
+			totalAgencia1++;
+		} else if (agencia == 002) {
+			totalAgencia2++;
+		}
 	}
 
-	public Double getTarifasSaque() {
-		return tarifasSaque;
+	public static int getTotalAgencia1() {
+		return totalAgencia1;
 	}
 
-	public void setTarifasSaque(Double tarifasSaque) {
-		this.tarifasSaque = tarifasSaque;
+	public static int getTotalAgencia2() {
+		return totalAgencia2;
 	}
 
-	public Double getTarifasDeposito() {
-		return tarifasDeposito;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setTarifasDeposito(Double tarifasDeposito) {
-		this.tarifasDeposito = tarifasDeposito;
+	public int getNumContas() {
+		return numContas;
 	}
 
-	public Double getTarifaTransferir() {
-		return tarifaTransferir;
+	public double getTotalTributos() {
+		return totalTributos;
 	}
 
-	public void setTarifaTransferir(Double tarifaTransferir) {
-		this.tarifaTransferir = tarifaTransferir;
+	public void setTotalTributos(double totalTributos) {
+		this.totalTributos = totalTributos;
 	}
 
-	public String getTIPOU() {
-		return TIPOU;
+	// Operações!
+
+	public String sacar(double valor) {
+		if (this.saldo > valor) {
+			double novoSaldo = this.getSaldo() - valor;
+			this.setSaldo(novoSaldo);
+			return "Saque realizado com sucesso!";
+		} else {
+			return "Saldo insuficiente para saque.";
+		}
 	}
 
-	@Override
-	public String toString() {
-		return "Conta [numeroConta=" + numeroConta + ", \nsaldo=" + saldo + ", \nagencia=" + agencia + "\ngetNome()="
-				+ getNome() + ", \ngetCpf()=" + getCpf() + ", \ngetSenha()=" + getSenha() + "]";
-	}
-
-	public void depositar(Double valor) {
+	public String depositar(double valor) {
 		if (valor > 0) {
-			setSaldo(getSaldo() + valor - tarifasDeposito);
-			System.out.println("Depósito realizado com sucesso!");
+			double novoSaldo = this.getSaldo() + valor;
+			this.setSaldo(novoSaldo);
+			return "Depósito realizado com sucesso!";
 		} else {
-			System.out.println("Depósito não realizado!");
-
-		}
-
-	}
-
-	public void sacar(Double valor) {
-		if (valor > 0 && this.getSaldo() >= valor + tarifasSaque) {
-			setSaldo(getSaldo() - valor - tarifasSaque);
-			System.out.println("Saque realizado com sucesso!");
-		} else {
-			System.out.println("Não foi possível realizar o saque!");
+			return "Depósito inválido!";
 		}
 	}
 
-	public void transferir(Conta contaParaDeposito, Double valor) {
-		if (valor > 0 && this.getSaldo() >= valor + tarifaTransferir) {
-			setSaldo(getSaldo() - valor - tarifaTransferir);
-
-			contaParaDeposito.saldo = contaParaDeposito.getSaldo() + valor;
-			System.out.println("Transferência realizada com sucesso!");
+	public String transferir(double valor, Conta conta) {
+		if (this.saldo > valor) {
+			sacar(valor);
+			conta.setSaldo(conta.getSaldo() + valor);
+			return "Transferência realizada com sucesso!";
 		} else {
-			System.out.println("Não foi possível realizar a transferência!");
+			return "Saldo insuficiente para transfer�ncia.";
 		}
-
 	}
+
 }
