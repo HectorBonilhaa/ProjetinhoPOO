@@ -1,11 +1,10 @@
 package cliente;
 
-public abstract class Usuario {
+public abstract class Usuario implements Comparable<Usuario> {
 	private String nome;
 	private String cpf;
 	private String senha;
 	private String tipo;
-	
 
 	public Usuario() {
 		super();
@@ -49,8 +48,13 @@ public abstract class Usuario {
 		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", senha=" + senha + ", getNome()=" + getNome()
 				+ ", getCpf()=" + getCpf() + ", getSenha()=" + getSenha() + "]";
 	}
-	
+
 	public void menu() {
-		
+
+	}
+
+	@Override
+	public int compareTo(Usuario usuario) {
+		return this.getCpf().compareToIgnoreCase(usuario.getCpf());
 	}
 }
