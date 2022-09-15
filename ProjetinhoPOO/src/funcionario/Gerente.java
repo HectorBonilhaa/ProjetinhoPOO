@@ -6,11 +6,12 @@ import contas.Conta;
 import enums.PessoaEnum;
 
 public class Gerente extends Funcionario {
-	protected PessoaEnum cargo;
+	protected String cargo;
 	private int agencia;
 
 	public Gerente() {
 		super();
+<<<<<<< HEAD
 		// TODO Auto-generated constructor stub
 	}
 
@@ -18,12 +19,21 @@ public class Gerente extends Funcionario {
 		super(nome, cpf, senha, userTipo);
 		this.cargo = PessoaEnum.GERENTE;
 		this.agencia = ag;
+=======
+>>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
 		
 	}
 
-	public PessoaEnum getCargo() {
-		return cargo;
+
+
+
+	public Gerente(String nome, String cpf, String senha, String userTipo, String funcao, int ag) {
+		super(nome, cpf, senha, userTipo, funcao);
+		this.cargo = "GERENTE";
+		this.agencia = ag;
 	}
+
+
 
 
 	@Override

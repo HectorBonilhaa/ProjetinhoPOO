@@ -11,10 +11,11 @@ import enums.PessoaEnum;
 public class Diretor extends Gerente
 
 {
-	private PessoaEnum cargo;
-
+	private String cargo;
+	
 	public Diretor() {
 		super();
+<<<<<<< HEAD
 		// TODO Auto-generated constructor stub
 	}
 
@@ -23,13 +24,18 @@ public class Diretor extends Gerente
 	public Diretor(String nome, String cpf, String senha, PessoaEnum userTipo, int agencia) {
 		super(nome, cpf, senha, userTipo, agencia);
 		this.cargo = PessoaEnum.DIRETOR;
+=======
+		
+>>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
 	}
 
 
-
-	public PessoaEnum getCargo() {
-		return cargo;
+	public Diretor(String nome, String cpf, String senha, String userTipo, String funcao, int ag) {
+		super(nome, cpf, senha, userTipo, funcao, ag);
+		this.cargo ="DIRETOR";
 	}
+
+
 
 
 	@Override

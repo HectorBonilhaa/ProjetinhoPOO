@@ -5,17 +5,37 @@ import java.util.Scanner;
 import enums.PessoaEnum;
 
 public class Cliente extends Usuario {
+<<<<<<< HEAD
 
 	private PessoaEnum tipo;
 
+=======
+	
+	private String tipo;
+>>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
 	public Cliente() {
 		super();
 	}
 
+<<<<<<< HEAD
 	public Cliente(String nome, String cpf, String senha, PessoaEnum tipo) {
 		super(nome, cpf, senha, tipo);
 		this.tipo = PessoaEnum.CLIENTE;
 	}
+=======
+	
+
+	
+	public Cliente(String nome, String cpf, String senha, String userTipo, String funcao) {
+		super(nome, cpf, senha, userTipo, funcao);
+		this.tipo = "CLIENTE";
+			}
+
+
+
+
+
+>>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
 
 	@Override
 	public String toString() {
@@ -23,6 +43,12 @@ public class Cliente extends Usuario {
 				+ getSenha() + "]";
 	}
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
 	@Override
 	public void menu() {
 		Scanner leitor = new Scanner(System.in);
