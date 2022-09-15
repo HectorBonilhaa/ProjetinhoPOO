@@ -9,6 +9,16 @@ public class Gerente extends Funcionario {
 
 	public Gerente() {
 		super();
+<<<<<<< HEAD
+		// TODO Auto-generated constructor stub
+	}
+
+	public Gerente(String nome, String cpf, String senha, PessoaEnum userTipo, int ag) {
+		super(nome, cpf, senha, userTipo);
+		this.cargo = PessoaEnum.GERENTE;
+		this.agencia = ag;
+=======
+>>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
 		
 	}
 public String getCargo() {

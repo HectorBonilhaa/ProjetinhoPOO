@@ -24,7 +24,7 @@ public class ContaCorrente extends Conta {
 	}
 	// Operações Conta Corrente! //
 
-	@Override
+	
 	public String sacar(double valor) {
 		double novoSaldo;
 		if (this.getSaldo() > valor + saque) {
@@ -38,7 +38,7 @@ public class ContaCorrente extends Conta {
 		}
 	}
 
-	@Override
+	
 	public String depositar(double valor) {
 		if (valor > 0) {
 			double novoSaldo = this.getSaldo() + valor - deposito;
