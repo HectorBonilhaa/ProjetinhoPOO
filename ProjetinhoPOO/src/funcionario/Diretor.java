@@ -20,7 +20,7 @@ public class Diretor extends Gerente
 
 	
 
-	public Diretor(String nome, String cpf, String senha, String userTipo, int agencia) {
+	public Diretor(String nome, String cpf, String senha, PessoaEnum userTipo, int agencia) {
 		super(nome, cpf, senha, userTipo, agencia);
 		this.cargo = PessoaEnum.DIRETOR;
 	}
@@ -89,8 +89,7 @@ public class Diretor extends Gerente
 			case 7:
 				break;
 
-			case 8: informacaoClientes(conta, u, usuario, 
-					contasBanco);
+			case 8: 
 				break;
 				
 			case 9:

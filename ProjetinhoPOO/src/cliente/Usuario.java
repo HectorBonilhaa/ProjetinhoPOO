@@ -1,17 +1,19 @@
 package cliente;
 
+import enums.PessoaEnum;
+
 public abstract class Usuario implements Comparable<Usuario> {
 	private String nome;
 	private String cpf;
 	private String senha;
-	private String tipo;
+	private PessoaEnum tipo;
 
 	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(String nome, String cpf, String senha, String userTipo) {
+	public Usuario(String nome, String cpf, String senha, PessoaEnum userTipo) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;

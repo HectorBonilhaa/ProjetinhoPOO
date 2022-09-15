@@ -14,7 +14,7 @@ public class Gerente extends Funcionario {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Gerente(String nome, String cpf, String senha, String userTipo, int ag) {
+	public Gerente(String nome, String cpf, String senha, PessoaEnum userTipo, int ag) {
 		super(nome, cpf, senha, userTipo);
 		this.cargo = PessoaEnum.GERENTE;
 		this.agencia = ag;

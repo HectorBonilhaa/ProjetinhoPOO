@@ -15,7 +15,7 @@ public abstract class Funcionario extends Usuario {
 	
 	
 
-	public Funcionario(String nome, String cpf, String senha, String userTipo) {
+	public Funcionario(String nome, String cpf, String senha, PessoaEnum userTipo) {
 		super(nome, cpf, senha, userTipo);
 		this.cargo = PessoaEnum.FUNCIONARIO;
 	}

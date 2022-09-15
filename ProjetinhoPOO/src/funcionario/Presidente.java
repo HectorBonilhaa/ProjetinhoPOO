@@ -6,7 +6,6 @@ import cliente.Cliente;
 import contas.Conta;
 import enums.PessoaEnum;
 
-
 public class Presidente extends Diretor {
 
 	private PessoaEnum cargo;
@@ -16,17 +15,14 @@ public class Presidente extends Diretor {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	public Presidente(String nome, String cpf, String senha, int ag) {
-		super(nome, cpf, senha, senha, ag);
+	public Presidente(String nome, String cpf, String senha, PessoaEnum userTipo, int agencia) {
+		super(nome, cpf, senha, userTipo, agencia);
 		this.cargo = PessoaEnum.PRESIDENTE;
 	}
-
 
 	public PessoaEnum getCargo() {
 		return cargo;
 	}
-
 
 	@Override
 	public String toString() {
