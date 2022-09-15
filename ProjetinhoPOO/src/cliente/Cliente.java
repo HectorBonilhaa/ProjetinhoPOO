@@ -1,43 +1,31 @@
 package cliente;
 
-import java.util.Scanner;
-
-import enums.PessoaEnum;
-
 public class Cliente extends Usuario {
-	
-	private String tipo;
+
+	private String cargo;
+
 	public Cliente() {
 		super();
 	}
 
-	
+	public String getCargo() {
+		return this.cargo;
+	}
 
-	
-	public Cliente(String nome, String cpf, String senha, String userTipo, String funcao) {
-		super(nome, cpf, senha, userTipo, funcao);
-		this.tipo = "CLIENTE";
-			}
+	public Cliente(String nome, String cpf, String senha) {
+		super(nome, cpf, senha);
+		this.cargo = "CLIENTE";
 
-
-
-
-
+	}
 
 	@Override
 	public String toString() {
-		return "Cliente [tipo=" + tipo + ", getNome()=" + getNome() + ", getCpf()=" + getCpf() + ", getSenha()="
+		return "Cliente [tipo=" + cargo + ", getNome()=" + getNome() + ", getCpf()=" + getCpf() + ", getSenha()="
 				+ getSenha() + "]";
 	}
 
-
-
-
 	@Override
 	public void menu() {
-		Scanner leitor = new Scanner(System.in);
-		int opcao = 0;
-		int x = 0;
 
 		System.out.println("**********Bem Vindo " + getNome() + "**********");
 		System.out.println("-----------------------------------------");
@@ -56,33 +44,6 @@ public class Cliente extends Usuario {
 		System.out.println("7- Sair");
 
 		System.out.println("\n");
-		opcao = leitor.nextInt();
-
-		switch (opcao) {
-		case 1:
-			break;
-
-		case 2:
-			break;
-
-		case 3:
-			break;
-
-		case 4:
-			break;
-
-		case 5:
-			break;
-
-		case 6:
-			break;
-
-		case 7:
-			break;
-
-		default:
-			break;
-		}
 
 	}
 

@@ -14,13 +14,11 @@ public abstract class Usuario implements Comparable<Usuario> {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(String nome, String cpf, String senha, String userTipo, String funcao) {
+	public Usuario(String nome, String cpf, String senha) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.senha = senha;
-		this.tipo = userTipo;
-		this.cargo = funcao;
 		
 	}
 	

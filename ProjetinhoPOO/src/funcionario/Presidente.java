@@ -1,10 +1,6 @@
 package funcionario;
 
-import java.util.Scanner;
 
-import cliente.Cliente;
-import contas.Conta;
-import enums.PessoaEnum;
 
 public class Presidente extends Diretor {
 
@@ -17,8 +13,8 @@ public class Presidente extends Diretor {
 
 	
 
-	public Presidente(String nome, String cpf, String senha, String userTipo, String funcao, int ag) {
-		super(nome, cpf, senha, userTipo, funcao, ag);
+	public Presidente(String nome, String cpf, String senha, int ag) {
+		super(nome, cpf, senha, ag);
 		 this.cargo = "PRESIDENTE";
 	}
 
@@ -33,11 +29,7 @@ public class Presidente extends Diretor {
 	@Override
 	public void menu() {
 
-		Scanner leitor = new Scanner(System.in);
-		int opcao = 0;
-		int x = 0;
-
-		do {
+	
 			System.out.println("**********Bem Vindo " + getNome() + "**********");
 			System.out.println("-----------------------------------------");
 			System.out.println("-----------------------------------------");
@@ -58,44 +50,6 @@ public class Presidente extends Diretor {
 			System.out.println("10- Sair");
 
 			System.out.println("\n");
-			opcao = leitor.nextInt();
-
-			switch (opcao) {
-			case 1:
-				break;
-
-			case 2:
-				break;
-
-			case 3:
-				break;
-
-			case 4:
-				break;
-
-			case 5:
-				break;
-
-			case 6:
-				break;
-
-			case 7:
-				break;
-
-			case 8:
-				break;
-
-			case 9:
-				break;
-
-			case 10:
-				break;
-
-			default:
-				break;
-
-			}
-		} while (x == 0);
-
+			
 	}
 }

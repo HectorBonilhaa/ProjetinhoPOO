@@ -12,12 +12,16 @@ public abstract class Funcionario extends Usuario {
 		
 	}
 
-	
+	public String getCargo() {
+		return this.cargo;
+	}
 
-	public Funcionario(String nome, String cpf, String senha, String userTipo, String funcao) {
-		super(nome, cpf, senha, userTipo, funcao);
+	public Funcionario(String nome, String cpf, String senha) {
+		super(nome, cpf, senha);
 		this.cargo = "FUNCIONARIO";
 	}
+	
+	
 
 	
 	
