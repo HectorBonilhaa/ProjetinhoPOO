@@ -4,28 +4,64 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import cliente.Cliente;
+import cliente.Usuario;
 import contas.Conta;
+import contas.ContaCorrente;
 import contas.ContaPoupanca;
+import enums.PessoaEnum;
+import funcionario.Diretor;
 import funcionario.Funcionario;
+import funcionario.Gerente;
+import funcionario.Presidente;
 
-
-public class menu 
-{
+public class menu {
 	static Scanner input = new Scanner(System.in);
-
 	
+
 	public static void main(String[] args) {
 		List<Conta> contasBanco = new ArrayList<>();
-		int x = 0;
+		List<Usuario> usuario = new ArrayList<>();
+	    Usuario fulano = new Presidente("presida", "1", "1", PessoaEnum.PRESIDENTE, 001);
+	    Usuario fulano1 = new Gerente("gerente", "2", "2", PessoaEnum.GERENTE, 001);
+	    Usuario fulano2 = new Diretor("diretor", "3", "3", PessoaEnum.DIRETOR, 001);
+		Conta cFulano = new ContaCorrente("1", 5000.0, 001, "CORRENTE", 1);
+		Conta cFulano1 = new ContaCorrente("2", 5000.0, 001, "CORRENTE", 1);
+		Conta cFulano2 = new ContaCorrente("3", 5000.0, 001, "CORRENTE", 1);
+
+		usuario.add(fulano);
+		usuario.add(fulano1);
+		usuario.add(fulano2);
+		contasBanco.add(cFulano);
+		contasBanco.add(cFulano1);
+		contasBanco.add(cFulano2);
+
+		menuLogin(contasBanco, usuario);
+	}
+
+	public static Usuario autenticarCliente(String cpf, String senha, List<Usuario> usuario) {
+		for (Usuario clienteUsuario : usuario) {
+			if (clienteUsuario.getCpf().equalsIgnoreCase(cpf) && clienteUsuario.getSenha().equalsIgnoreCase(senha))
+				return clienteUsuario;
+		}
+		return null;
+
+	}
+
+	public static Conta autenticarConta(String cpf, List<Conta> contasBanco) {
+		for (Conta contaUsuario : contasBanco) {
+			if (contaUsuario.getCpf().equalsIgnoreCase(cpf))
+				return contaUsuario;
+		}
+		return null;
+
+	}
+
+	public static void menuLogin(List<Conta> contasBanco, List<Usuario> usuario) {
 		Scanner leitor = new Scanner(System.in);
 		String cpf;
 		String senha;
 		
-		Conta conta = new ContaPoupanca("dasda","123","1234",0, 5000.0,1);
-		contasBanco.add(conta);
-		
-		
-		do {
 			System.out.println("**********Bem Vindo a F.E.J.H.M**********");
 			System.out.println("-----------------------------------------");
 			System.out.println("-----------------------------------------");
@@ -35,44 +71,35 @@ public class menu
 			cpf = leitor.next();
 			System.out.print("Senha: ");
 			senha = leitor.next();
+
+			Usuario cliente = autenticarCliente(cpf, senha, usuario);
+			Conta contaBanco = autenticarConta(cpf, contasBanco);
 			
-			Conta contaUsuario = autenticar(cpf,senha, contasBanco);
+			if (cliente == null && contaBanco == null) {
+				System.out.println("Senha ou cpf inválidos");
+			    menuLogin(contasBanco, usuario);
+			}
 			
-			if(contaUsuario == null)
-			System.out.println("Senha ou cpf inválidos");
+			cliente.menu();
 		
-		}while(contaUsuario == null); 
-//		
-//		switch(contaUsuario.getTIPOU) {
-//		
-//		case GERENTE.name: menuGerente();
-//	       					   break;
-//			case DIRETOR.name:  menuDiretor();
-//			    		       break;
-//						  
-//			case PRESIDENTE.name: menuPresidente();
-//				                  break;
-//				                  
-//		    default: menuUsuario();
-//		    	     break;
-//		}
-//		
-		
-	}
-	
-	public static Conta autenticar(String cpf, String senha, List<Conta> contasUsuario) {
-		for (Conta conta : contasUsuario) {
-			if(conta.getCpf().equalsIgnoreCase(cpf));
-				if(conta.getSenha().equalsIgnoreCase(senha)) {
-					System.out.println("Bem Vindo "+ conta.getNome());
-					return conta;
-				}else {
-					return null;
-				}
-		}
-		return null;
-		
-		
-	}
+			
+			
+
+//	
+//	switch(contaUsuario.getTIPOU) {
+//	
+//	case GERENTE.name: menuGerente();
+//       					   break;
+//		case DIRETOR.name:  menuDiretor();
+//		    		       break;
+//					  
+//		case PRESIDENTE.name: menuPresidente();
+//			                  break;
+//			                  
+//	    default: menuUsuario();
+//	    	     break;
+//	}
+//	
+}
 
 }
