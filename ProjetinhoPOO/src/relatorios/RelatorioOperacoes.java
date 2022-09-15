@@ -14,7 +14,7 @@ public class RelatorioOperacoes {
 	// RELATÓRIO DEPOSITO //
 
 	public static void pathDeposito(Conta conta, double valor, Usuario usuario) throws IOException {
-		final String PATH_BASICO = "./temp/";
+		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
@@ -28,8 +28,6 @@ public class RelatorioOperacoes {
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "                                    _______                          ";
 		buffWrite.append(linha + "\n");
 		linha = "****************Banco F.E.J.H.M****************\r\n";
 		buffWrite.append(linha + "\n");
@@ -56,7 +54,7 @@ public class RelatorioOperacoes {
 	// RELATÓRIO SAQUE //
 
 	public static void pathSaque(Conta conta, Usuario usuario, double valor) throws IOException {
-		final String PATH_BASICO = "./temp/";
+		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
@@ -70,8 +68,6 @@ public class RelatorioOperacoes {
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "                                    _______                          ";
 		buffWrite.append(linha + "\n");
 		linha = "****************Banco F.E.J.H.M****************\r\n";
 		buffWrite.append(linha + "\n");
@@ -98,7 +94,7 @@ public class RelatorioOperacoes {
 
 	public static void pathTransferencia(Conta conta, double valor, Usuario usuario, Usuario destinatario)
 			throws IOException {
-		final String PATH_BASICO = "./temp/";
+		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
@@ -113,8 +109,6 @@ public class RelatorioOperacoes {
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "                                    _______                          ";
 		buffWrite.append(linha + "\n");
 		linha = "****************Banco F.E.J.H.M****************\r\n";
 		buffWrite.append(linha + "\n");

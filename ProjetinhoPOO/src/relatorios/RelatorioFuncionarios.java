@@ -37,7 +37,7 @@ public class RelatorioFuncionarios {
 
 	public static void pathInformacaoCliente(Conta conta, Usuario u, List<Usuario> usuario, List<Conta> contasBanco)
 			throws IOException {
-		final String PATH_BASICO = "./temp/";
+		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_HH_mm_ss");
@@ -99,7 +99,7 @@ public class RelatorioFuncionarios {
 	}
 
 	public static void pathGerente(Conta conta, Usuario usuario, int total) throws IOException {
-		final String PATH_BASICO = "./temp/";
+		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
@@ -149,7 +149,7 @@ public class RelatorioFuncionarios {
 	}
 
 	public static void pathCapital(Conta conta, Usuario usuario, double capital) throws IOException {
-		final String PATH_BASICO = "./temp/";
+		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
@@ -163,8 +163,6 @@ public class RelatorioFuncionarios {
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "                                    _______                          ";
 		buffWrite.append(linha + "\n");
 		linha = "****************Banco F.E.J.H.M****************\r\n";
 		buffWrite.append(linha + "\n");
@@ -182,9 +180,7 @@ public class RelatorioFuncionarios {
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");
-		linha = "_________________Volte Sempre!________________";
-		buffWrite.append(linha + "\n");
-
+	
 		buffWrite.close();
 	}
 	// FIM DO RELATÓRIO PRESIDENTE //

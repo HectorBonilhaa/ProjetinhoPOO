@@ -12,7 +12,7 @@ import cliente.Usuario;
 public class Saldo {
 
 	public static void pathsaldo(Usuario u, Conta conta) throws IOException {
-		final String PATH_BASICO = "./temp/";
+		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		final String OPERACAO = "saldo";
 		Date date = new Date();
@@ -29,8 +29,6 @@ public class Saldo {
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
 		String linha = "";
 		linha = "************************************************************"; 
-		buffWrite.append(linha + "\n");
-		linha = "                                    _______                          ";
 		buffWrite.append(linha + "\n");
 		linha = "****************Banco F.E.J.H.M****************\r\n";
 		buffWrite.append(linha + "\n");
