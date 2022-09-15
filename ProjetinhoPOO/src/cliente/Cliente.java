@@ -6,20 +6,24 @@ import enums.PessoaEnum;
 
 public class Cliente extends Usuario {
 	
-	private PessoaEnum tipo;
+	private String tipo;
 	public Cliente() {
 		super();
 	}
 
 	
-	
-
-	public Cliente(String nome, String cpf, String senha, PessoaEnum tipo) {
-		super(nome, cpf, senha, tipo);
-	this.tipo = PessoaEnum.CLIENTE;
-	}
 
 	
+	public Cliente(String nome, String cpf, String senha, String userTipo, String funcao) {
+		super(nome, cpf, senha, userTipo, funcao);
+		this.tipo = "CLIENTE";
+			}
+
+
+
+
+
+
 	@Override
 	public String toString() {
 		return "Cliente [tipo=" + tipo + ", getNome()=" + getNome() + ", getCpf()=" + getCpf() + ", getSenha()="

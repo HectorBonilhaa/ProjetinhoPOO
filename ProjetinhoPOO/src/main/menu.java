@@ -22,16 +22,16 @@ public class menu {
 	public static void main(String[] args) {
 		List<Conta> contasBanco = new ArrayList<>();
 		List<Usuario> usuario = new ArrayList<>();
-	    Usuario fulano = new Presidente("presida", "1", "1", PessoaEnum.PRESIDENTE, 001);
-	    Usuario fulano1 = new Gerente("gerente", "2", "2", PessoaEnum.GERENTE, 001);
-	    Usuario fulano2 = new Diretor("diretor", "3", "3", PessoaEnum.DIRETOR, 001);
+	    Usuario fulano = new Presidente("Presidente", "1", "1", "PRESIDENTE", "PRESEDENTE", 1);
+//	    Usuario fulano1 = new Gerente("gerente", "2", "2", PessoaEnum.GERENTE, 001);
+//	    Usuario fulano2 = new Diretor("diretor", "3", "3", PessoaEnum.DIRETOR, 001);
 		Conta cFulano = new ContaCorrente("1", 5000.0, 001, "CORRENTE", 1);
 		Conta cFulano1 = new ContaCorrente("2", 5000.0, 001, "CORRENTE", 1);
 		Conta cFulano2 = new ContaCorrente("3", 5000.0, 001, "CORRENTE", 1);
 
 		usuario.add(fulano);
-		usuario.add(fulano1);
-		usuario.add(fulano2);
+//		usuario.add(fulano1);
+//		usuario.add(fulano2);
 		contasBanco.add(cFulano);
 		contasBanco.add(cFulano1);
 		contasBanco.add(cFulano2);
@@ -80,26 +80,13 @@ public class menu {
 			    menuLogin(contasBanco, usuario);
 			}
 			
-			cliente.menu();
+			if (cliente.getCargo().equalsIgnoreCase(PessoaEnum.CLIENTE.name())) {
+				cliente.menu();
+				
+			}
 		
 			
-			
-
-//	
-//	switch(contaUsuario.getTIPOU) {
-//	
-//	case GERENTE.name: menuGerente();
-//       					   break;
-//		case DIRETOR.name:  menuDiretor();
-//		    		       break;
-//					  
-//		case PRESIDENTE.name: menuPresidente();
-//			                  break;
-//			                  
-//	    default: menuUsuario();
-//	    	     break;
-//	}
-//	
+	
 }
 
 }

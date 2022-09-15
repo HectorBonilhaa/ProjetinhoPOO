@@ -8,21 +8,21 @@ import enums.PessoaEnum;
 
 public class Presidente extends Diretor {
 
-	private PessoaEnum cargo;
+	private String cargo;
 
 	public Presidente() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Presidente(String nome, String cpf, String senha, PessoaEnum userTipo, int agencia) {
-		super(nome, cpf, senha, userTipo, agencia);
-		this.cargo = PessoaEnum.PRESIDENTE;
+	
+
+	public Presidente(String nome, String cpf, String senha, String userTipo, String funcao, int ag) {
+		super(nome, cpf, senha, userTipo, funcao, ag);
+		 this.cargo = "PRESIDENTE";
 	}
 
-	public PessoaEnum getCargo() {
-		return cargo;
-	}
+
 
 	@Override
 	public String toString() {
