@@ -1,36 +1,99 @@
 package funcionario;
 
-import cliente.Usuario;
-import enums.PessoaEnum;
+import java.util.Scanner;
 
-public abstract class Funcionario extends Usuario {
-	
-	private PessoaEnum cargo;
-	
-	public Funcionario() {
-		super();
-		// TODO Auto-generated constructor stub
+import cliente.Cliente;
+import contas.Conta;
+
+public abstract class Funcionario extends Cliente 
+{
+	protected String cargo;
+		
+	public Funcionario(String nome, String cpf, String senha) 
+	{
+		super(nome, cpf, senha);
 	}
 
-	
-	
-
-	public Funcionario(String nome, String cpf, String senha, String userTipo) {
-		super(nome, cpf, senha, userTipo);
-		this.cargo = PessoaEnum.FUNCIONARIO;
+	public Funcionario(String nome, String cpf, String senha, String cargo) 
+	{
+		super(nome, cpf, senha);
+		this.cargo = cargo;
 	}
 
-
-
-
-	public PessoaEnum getCargo() {
+	public String getCargo() 
+	{
 		return cargo;
 	}
 
-	
-	
-	@Override
-	public void menu() {
-		
+	public void setCargo(String cargo) 
+	{
+		this.cargo = cargo;
 	}
+	
+	
+		public static void criarMenu(Conta contaUsuario) {
+			
+		
+			Scanner leitor = new Scanner(System.in);
+			int opcao = 0;
+			int x = 0;
+			
+			do {
+				
+				System.out.println("**********Bem Vindo " + contaUsuario.getNome() + "**********");
+				System.out.println("-----------------------------------------");
+				System.out.println("-----------------------------------------");
+				System.out.println("------------------MENU------------------");
+				
+				System.out.println(" Movimentações na Conta  ");
+				System.out.println("1- Sacar");
+				System.out.println("2- Depósitar");
+				System.out.println("3- Transferir");
+				System.out.println("\n");
+							
+				System.out.println(" Relatórios ");
+				System.out.println("4- Saldo ");
+				System.out.println("5- Relatório de tributação da conta corrente");
+				System.out.println("6- Relatório de Rendimento da poupança ");
+				System.out.println("\n");
+				System.out.println("  7- Sair            ");
+				
+				System.out.println("\n");
+				opcao = leitor.nextInt();
+				switch(opcao)
+				{
+					case 1: 
+					      break;
+					    		  
+					case 2: 
+						 break;
+								  
+					case 3: 
+						   break;
+						                
+					case 4: 
+    					break;
+					case 5: 
+    					break;
+					case 6: 
+    					break;
+					case 7: 
+    					break;
+						                  
+				    default:
+				    	     break;
+				}
+			} while (x==0);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}
 }
