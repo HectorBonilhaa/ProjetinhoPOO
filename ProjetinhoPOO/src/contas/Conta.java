@@ -86,34 +86,16 @@ public abstract class Conta implements Tributos {
 
 	// Operações!
 
-	public String sacar(double valor) {
-		if (this.saldo > valor) {
-			double novoSaldo = this.getSaldo() - valor;
-			this.setSaldo(novoSaldo);
-			return "Saque realizado com sucesso!";
-		} else {
-			return "Saldo insuficiente para saque.";
-		}
+	public void sacar(double valor) {
+	
 	}
 
-	public String depositar(double valor) {
-		if (valor > 0) {
-			double novoSaldo = this.getSaldo() + valor;
-			this.setSaldo(novoSaldo);
-			return "Depósito realizado com sucesso!";
-		} else {
-			return "Depósito inválido!";
-		}
+	public void depositar(double valor) {
+		
 	}
 
-	public String transferir(double valor, Conta conta) {
-		if (this.saldo > valor) {
-			sacar(valor);
-			conta.setSaldo(conta.getSaldo() + valor);
-			return "Transferência realizada com sucesso!";
-		} else {
-			return "Saldo insuficiente para transfer�ncia.";
-		}
+	public void transferir(double valor, Conta conta) {
+		
 	}
 
 }

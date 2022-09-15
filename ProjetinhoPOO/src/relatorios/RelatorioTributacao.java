@@ -15,7 +15,7 @@ public class RelatorioTributacao {
 	//	RELATÓRIO TRIBUTAÇÃO //
 	
 	public static void pathTributacao(Usuario u, Conta conta) throws IOException {
-		final String PATH_BASICO = "./temp/";
+		final String PATH_BASICO = "D:\\DNVjavaTrabalho\\ProjetinhoPOO\\ProjetinhoPOO";
 		final String EXTENSAO = ".txt";
 		final String OPERACAO = "tributacaoCc";
 		Date date = new Date();
