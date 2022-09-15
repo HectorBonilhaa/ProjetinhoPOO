@@ -6,27 +6,15 @@ public abstract class Usuario implements Comparable<Usuario> {
 	private String nome;
 	private String cpf;
 	private String senha;
-<<<<<<< HEAD
-	private PessoaEnum tipo;
-=======
 	private String tipo ; 
 	private String cargo;
->>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
 
 	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-<<<<<<< HEAD
 	public Usuario(String nome, String cpf, String senha) {
-=======
-<<<<<<< HEAD
-	public Usuario(String nome, String cpf, String senha, PessoaEnum userTipo) {
-=======
-	public Usuario(String nome, String cpf, String senha, String userTipo, String funcao) {
->>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
->>>>>>> 0a6345f08f93dd1a956a2835b5a8a19ed26b8c8a
 		super();
 		this.nome = nome;
 		this.cpf = cpf;

@@ -8,18 +8,7 @@ public class Diretor extends Gerente
 	
 	public Diretor() {
 		super();
-<<<<<<< HEAD
-		// TODO Auto-generated constructor stub
-	}
-
-	
-
-	public Diretor(String nome, String cpf, String senha, PessoaEnum userTipo, int agencia) {
-		super(nome, cpf, senha, userTipo, agencia);
-		this.cargo = PessoaEnum.DIRETOR;
-=======
 		
->>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
 	}
 
 

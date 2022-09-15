@@ -21,42 +21,20 @@ public class menu {
 	public static void main(String[] args) {
 		List<Conta> contasBanco = new ArrayList<>();
 		List<Usuario> usuario = new ArrayList<>();
-<<<<<<< HEAD
 		Usuario fulano = new Presidente("Presidente", "1", "1", 1);
 		Usuario fulano1 = new Gerente("gerente", "2", "2", 001);
 		Usuario fulano2 = new Diretor("diretor", "3", "3", 001);
 		Usuario fulano3 = new Cliente("Cliente", "4", "4");
 
-=======
-<<<<<<< HEAD
-	    Usuario fulano = new Presidente("presida", "1", "1", PessoaEnum.PRESIDENTE, 001);
-	    Usuario fulano1 = new Gerente("gerente", "2", "2", PessoaEnum.GERENTE, 001);
-	    Usuario fulano2 = new Diretor("diretor", "3", "3", PessoaEnum.DIRETOR, 001);
-=======
-	    Usuario fulano = new Presidente("Presidente", "1", "1", "PRESIDENTE", "PRESEDENTE", 1);
-//	    Usuario fulano1 = new Gerente("gerente", "2", "2", PessoaEnum.GERENTE, 001);
-//	    Usuario fulano2 = new Diretor("diretor", "3", "3", PessoaEnum.DIRETOR, 001);
->>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
->>>>>>> 0a6345f08f93dd1a956a2835b5a8a19ed26b8c8a
 		Conta cFulano = new ContaCorrente("1", 5000.0, 001, "CORRENTE", 1);
 		Conta cFulano1 = new ContaCorrente("2", 5000.0, 001, "CORRENTE", 1);
 		Conta cFulano2 = new ContaCorrente("3", 5000.0, 001, "CORRENTE", 1);
 		Conta cFulano3 = new ContaCorrente("4", 5000.0, 001, "CORRENTE", 1);
 
 		usuario.add(fulano);
-<<<<<<< HEAD
 		usuario.add(fulano1);
 		usuario.add(fulano2);
 		usuario.add(fulano3);
-=======
-<<<<<<< HEAD
-		usuario.add(fulano1);
-		usuario.add(fulano2);
-=======
-//		usuario.add(fulano1);
-//		usuario.add(fulano2);
->>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
->>>>>>> 0a6345f08f93dd1a956a2835b5a8a19ed26b8c8a
 		contasBanco.add(cFulano);
 		contasBanco.add(cFulano1);
 		contasBanco.add(cFulano2);

@@ -1,56 +1,22 @@
 package cliente;
 
 public class Cliente extends Usuario {
-<<<<<<< HEAD
 
 	private String cargo;
 
-=======
-<<<<<<< HEAD
-
-	private PessoaEnum tipo;
-
-=======
-	
-	private String tipo;
->>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
->>>>>>> 0a6345f08f93dd1a956a2835b5a8a19ed26b8c8a
 	public Cliente() {
 		super();
 	}
 
-<<<<<<< HEAD
 	public String getCargo() {
 		return this.cargo;
 	}
-=======
-<<<<<<< HEAD
-	public Cliente(String nome, String cpf, String senha, PessoaEnum tipo) {
-		super(nome, cpf, senha, tipo);
-		this.tipo = PessoaEnum.CLIENTE;
-	}
-=======
-	
-
-	
-	public Cliente(String nome, String cpf, String senha, String userTipo, String funcao) {
-		super(nome, cpf, senha, userTipo, funcao);
-		this.tipo = "CLIENTE";
-			}
-
-
-
->>>>>>> 0a6345f08f93dd1a956a2835b5a8a19ed26b8c8a
 
 	public Cliente(String nome, String cpf, String senha) {
 		super(nome, cpf, senha);
 		this.cargo = "CLIENTE";
 
-<<<<<<< HEAD
 	}
-=======
->>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
->>>>>>> 0a6345f08f93dd1a956a2835b5a8a19ed26b8c8a
 
 	@Override
 	public String toString() {
@@ -58,15 +24,6 @@ public class Cliente extends Usuario {
 				+ getSenha() + "]";
 	}
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
->>>>>>> 0a6345f08f93dd1a956a2835b5a8a19ed26b8c8a
 	@Override
 	public void menu() {
 

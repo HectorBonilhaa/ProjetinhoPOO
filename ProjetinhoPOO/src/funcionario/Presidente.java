@@ -11,16 +11,6 @@ public class Presidente extends Diretor {
 		
 	}
 
-<<<<<<< HEAD
-	public Presidente(String nome, String cpf, String senha, PessoaEnum userTipo, int agencia) {
-		super(nome, cpf, senha, userTipo, agencia);
-		this.cargo = PessoaEnum.PRESIDENTE;
-	}
-
-	public PessoaEnum getCargo() {
-		return cargo;
-	}
-=======
 	
 
 	public Presidente(String nome, String cpf, String senha, int ag) {
@@ -29,7 +19,6 @@ public class Presidente extends Diretor {
 	}
 
 
->>>>>>> afe94e3fe09ab3631e7da2c86a62d150a497e5c2
 
 	@Override
 	public String toString() {
