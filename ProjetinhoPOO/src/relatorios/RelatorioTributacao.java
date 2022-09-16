@@ -14,7 +14,7 @@ public class RelatorioTributacao {
 	
 	//	RELATÓRIO TRIBUTAÇÃO //
 	
-	public static void pathTributacao(Usuario u, Conta conta) throws IOException {
+	public void pathTributacao(Usuario u, Conta conta) throws IOException {
 		final String PATH_BASICO = "..\\";
 		final String EXTENSAO = ".txt";
 		final String OPERACAO = "tributacaoCc";

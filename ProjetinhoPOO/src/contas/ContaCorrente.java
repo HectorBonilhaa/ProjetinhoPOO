@@ -1,5 +1,7 @@
 package contas;
 
+import exceptions.DepositoException;
+
 public class ContaCorrente extends Conta {
 	
 	private int numContas;
@@ -56,6 +58,7 @@ public class ContaCorrente extends Conta {
 			System.out.println("Depósito realizado com sucesso!");
 		} else {
 			System.out.println("Depósito inválido!");
+			throw new DepositoException("Impossível realizar um depósito com um valor negativo");
 		}
 	}
 

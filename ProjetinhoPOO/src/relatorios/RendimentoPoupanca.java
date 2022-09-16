@@ -12,7 +12,7 @@ import cliente.Usuario;
 
 public class RendimentoPoupanca {
 
-	public static void pathRendimento(Conta conta, Usuario usuario, double valor, int dias) throws IOException {
+	public void pathRendimento(Conta conta, Usuario usuario, double valor, int dias) throws IOException {
 		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();

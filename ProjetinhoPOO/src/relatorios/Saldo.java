@@ -11,7 +11,7 @@ import cliente.Usuario;
 
 public class Saldo {
 
-	public static void pathsaldo(Usuario u, Conta conta) throws IOException {
+	public void pathsaldo(Usuario u, Conta conta) throws IOException {
 		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		final String OPERACAO = "saldo";

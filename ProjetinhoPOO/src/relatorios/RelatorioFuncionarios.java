@@ -15,7 +15,7 @@ public class RelatorioFuncionarios {
 
 	// RELATORIO DIRETOR //
 
-	public static void informacaoClientes(Conta conta, Usuario u, List<Usuario> usuario, List<Conta> contasBanco)
+	public void informacaoClientes(Conta conta, Usuario u, List<Usuario> usuario, List<Conta> contasBanco)
 
 			throws IOException {
 		Collections.sort(usuario);
@@ -77,7 +77,7 @@ public class RelatorioFuncionarios {
 
 	// RELATORIO GERENTE! //
 
-	public static int totalDeContasSupervisionadas(Conta conta, Usuario usuario) throws IOException {
+	public int totalDeContasSupervisionadas(Conta conta, Usuario usuario) throws IOException {
 		int total = 0;
 		if (conta.getAgencia() == 1) {
 			total = Conta.getTotalAgencia1();
