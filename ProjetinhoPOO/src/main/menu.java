@@ -465,7 +465,7 @@ public class menu {
 					break;
 				}
 			} while (x == 1);
-		}System.out.println(contaBanco.toString());
+		}
 	}
 
 	private static Usuario encontrarUsuario(String cpf, List<Usuario> usuario) {

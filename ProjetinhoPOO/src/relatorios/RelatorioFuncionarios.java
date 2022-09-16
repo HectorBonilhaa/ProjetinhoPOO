@@ -32,7 +32,7 @@ public class RelatorioFuncionarios {
 
 	public static void pathInformacaoCliente(Conta conta, Usuario u, List<Usuario> usuario, List<Conta> contasBanco)
 			throws IOException {
-		final String PATH_BASICO = "..//";
+		final String PATH_BASICO = "..//RelatorioInfoClientes//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_HH_mm_ss");
@@ -95,7 +95,7 @@ public class RelatorioFuncionarios {
 	}
 
 	public static void pathGerente(Conta conta, Usuario usuario, int total) throws IOException {
-		final String PATH_BASICO = "..//";
+		final String PATH_BASICO = "..//RelatorioContaSupervisionadas//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
@@ -131,7 +131,7 @@ public class RelatorioFuncionarios {
 
 	// RELATORIO PRESIDENTE //
 
-	public static Double totalDeCapital(Conta conta, Usuario usuario, List<Conta> contasBanco) throws IOException {
+	public Double totalDeCapital(Conta conta, Usuario usuario, List<Conta> contasBanco) throws IOException {
 		double capitalTotal = 0;
 		for (int i = 0; i < contasBanco.size(); i++) {
 			capitalTotal += contasBanco.get(i).getSaldo() + contasBanco.get(i).getTotalTributos();

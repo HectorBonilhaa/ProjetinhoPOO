@@ -1,0 +1,65 @@
+*************************************
+***********Banco F.E.J.H.M***********
+
+
+-Relatório: Informações dos clientes-
+Oi, Michael
+
+************************ 
+Nome do cliente: Cliente
+CPF do cliente: 4
+Número da agência: 1
+Número da conta: 4
+************************
+
+************************ 
+Nome do cliente: diretor
+CPF do cliente: 3
+Número da agência: 1
+Número da conta: 3
+************************
+
+************************ 
+Nome do cliente: gerente
+CPF do cliente: 2
+Número da agência: 1
+Número da conta: 2
+************************
+
+************************ 
+Nome do cliente: gerente2
+CPF do cliente: 22
+Número da agência: 1
+Número da conta: 6
+************************
+
+************************ 
+Nome do cliente: Hector
+CPF do cliente: 7
+Número da agência: 1
+Número da conta: 8
+************************
+
+************************ 
+Nome do cliente: Jose
+CPF do cliente: 6
+Número da agência: 2
+Número da conta: 7
+************************
+
+************************ 
+Nome do cliente: Michael
+CPF do cliente: 5
+Número da agência: 2
+Número da conta: 5
+************************
+
+************************ 
+Nome do cliente: Presidente
+CPF do cliente: 1
+Número da agência: 2
+Número da conta: 1
+************************
+
+---------Fim do relatório---------
+Data: 16/09/2022 20:56:01
