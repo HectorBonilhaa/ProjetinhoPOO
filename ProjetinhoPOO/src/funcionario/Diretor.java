@@ -12,6 +12,17 @@ public class Diretor extends Gerente
 	}
 
 
+<<<<<<< HEAD
+	public Diretor(String nome, String cpf, String senha,  int ag) {
+		super(nome, cpf, senha,  ag);
+		this.cargo ="DIRETOR";
+=======
+	public String getCargo() {
+		return cargo;
+>>>>>>> DevelopHector
+	}
+
+
 	public Diretor(String nome, String cpf, String senha,  int ag) {
 		super(nome, cpf, senha,  ag);
 		this.cargo ="DIRETOR";
