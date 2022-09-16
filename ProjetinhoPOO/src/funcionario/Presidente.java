@@ -19,15 +19,9 @@ public class Presidente extends Diretor {
 	}
 
 
-<<<<<<< HEAD
-=======
-
 	public String getCargo() {
 		return cargo;
 	}
->>>>>>> DevelopHector
-
-
 
 	@Override
 	public String toString() {

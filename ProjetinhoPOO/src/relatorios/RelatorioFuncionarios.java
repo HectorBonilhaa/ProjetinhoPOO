@@ -22,16 +22,11 @@ public class RelatorioFuncionarios {
 		for (int i = 0; i < usuario.size(); i++) {
 			System.out.println("*****************\nNome do cliente: " + usuario.get(i).getNome() + "\nCPF do cliente: "
 					+ usuario.get(i).getCpf() + "\nNumero da agência: " + contasBanco.get(i).getAgencia()
-					+ "\n*****************");
+					+ "\n*****************" + "numeroConta" + contasBanco.get(i).getNumContas());
 			System.out.println();
+
 		}
-
-		PathInformacaoUsuario(conta, u, usuario, contasBanco);
-
-	}
-
-	private static void PathInformacaoUsuario(Conta conta, Usuario u, List<Usuario> listaUsuario,
-			List<Conta> listaConta) {
+		pathInformacaoCliente(conta, u, usuario, contasBanco);
 
 	}
 
@@ -42,8 +37,7 @@ public class RelatorioFuncionarios {
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_HH_mm_ss");
 		String path = PATH_BASICO + formatar.format(date) + "_relatorio_diretor_" + u.getNome() + EXTENSAO;
-		escritorInformacaoCliente(path, conta, null, null, contasBanco);
-		;
+		escritorInformacaoCliente(path, conta, u, usuario, contasBanco);
 
 	}
 
@@ -59,7 +53,6 @@ public class RelatorioFuncionarios {
 		linha = "***************************************************";
 		buffWrite.append(linha + "\n");
 		linha = "*****Banco F.E.J.H.M*****";
-		buffWrite.append(linha + "\n");
 		buffWrite.append(linha + "\n");
 		linha = "--------Relatório: Informações dos clientes--------";
 		buffWrite.append("\n" + linha + "\n");
@@ -77,8 +70,6 @@ public class RelatorioFuncionarios {
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");
-		linha = " Estamos a ordem! ";
-		buffWrite.append(linha + "\n");
 
 		buffWrite.close();
 	}
@@ -88,9 +79,9 @@ public class RelatorioFuncionarios {
 
 	public static int totalDeContasSupervisionadas(Conta conta, Usuario usuario) throws IOException {
 		int total = 0;
-		if (conta.getAgencia() == 001) {
+		if (conta.getAgencia() == 1) {
 			total = Conta.getTotalAgencia1();
-		} else if (conta.getAgencia() == 002) {
+		} else if (conta.getAgencia() == 2) {
 			total = Conta.getTotalAgencia2();
 		}
 
@@ -172,7 +163,7 @@ public class RelatorioFuncionarios {
 		buffWrite.append(linha + "\n");
 		linha = "-------------Relatório: Total de capital no banco-------------";
 		buffWrite.append("\n" + linha + "\n\n");
-		linha = "Ol�, " + u.getNome() + "!";
+		linha = "Bem Vindo, " + u.getNome() + "!";
 		buffWrite.append(linha + "\n");
 		linha = "O capital total no Banco F.E.J.H.M é de: R$  " + capital;
 		buffWrite.append(linha + "\n\n");
@@ -180,7 +171,7 @@ public class RelatorioFuncionarios {
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");
-	
+
 		buffWrite.close();
 	}
 	// FIM DO RELATÓRIO PRESIDENTE //

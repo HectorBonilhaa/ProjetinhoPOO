@@ -66,6 +66,6 @@ public abstract class Usuario implements Comparable<Usuario> {
 
 	@Override
 	public int compareTo(Usuario usuario) {
-		return this.getCpf().compareToIgnoreCase(usuario.getCpf());
+		return this.getNome().compareToIgnoreCase(usuario.getNome());
 	}
 }

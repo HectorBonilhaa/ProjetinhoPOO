@@ -1,6 +1,8 @@
 package contas;
 
 public class ContaCorrente extends Conta {
+	
+	private int numContas;
 
 	// Construtores //
 
@@ -9,11 +11,16 @@ public class ContaCorrente extends Conta {
 
 	}
 
-	public ContaCorrente(String cpf, double saldo, int agencia, String tipoConta, int numContas) {
-		super(cpf, saldo, agencia, tipoConta, numContas);
+	public ContaCorrente(String cpf, double saldo, int agencia, String tipoConta) {
+		super(cpf, saldo, agencia, tipoConta);
+		numContas = getContadorContas();
 
 	}
-
+	public int getNumContas() {
+		return this.numContas;
+		
+		
+	}
 	// ToString //
 
 	@Override
@@ -33,6 +40,7 @@ public class ContaCorrente extends Conta {
 			double total = getTotalTributos() + saque;
 			setTotalTributos(total);
 			System.out.println("Saque realizado com sucesso!");
+			
 		} else {
 			System.out.println("Saldo insuficiente para saque.");
 		}

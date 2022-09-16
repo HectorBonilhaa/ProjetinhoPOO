@@ -26,30 +26,49 @@ public class menu {
 	public static void main(String[] args) throws IOException {
 		List<Conta> contasBanco = new ArrayList<>();
 		List<Usuario> usuario = new ArrayList<>();
-		Usuario fulano = new Presidente("Presidente", "1", "1", 001);
-		Usuario fulano1 = new Gerente("gerente", "2", "2", 001);
-		Usuario fulano2 = new Diretor("diretor", "3", "3", 001);
+		Usuario fulano = new Presidente("Presidente", "1", "1", 1);
+		Usuario fulano1 = new Gerente("gerente", "2", "2", 1);
+		Usuario fulano11 = new Gerente("gerente2", "22", "22", 2);
+		Usuario fulano2 = new Diretor("diretor", "3", "3", 1);
 		Usuario fulano3 = new Cliente("Cliente", "4", "4");
-		Usuario fulano4 = new Cliente("Michael", "5", "5");
+		Usuario fulano4 = new Diretor("Michael", "5", "5",1);
+		Usuario fulano5 = new Cliente("Jose", "6", "6");
+		Usuario fulano6 = new Cliente("Hector", "7", "7");
 
-		Conta cFulano = new ContaCorrente("1", 5000.0, 001, "CORRENTE", 001);
-		Conta cFulano1 = new ContaCorrente("2", 5000.0, 001, "CORRENTE", 001);
-		Conta cFulano2 = new ContaCorrente("3", 5000.0, 001, "CORRENTE", 001);
-		Conta cFulano3 = new ContaCorrente("4", 5000.0, 001, "CORRENTE", 001);
-		Conta cFulano4 = new ContaCorrente("5", 5000.0, 001, "CORRENTE", 001);
+		Conta cFulano  = new ContaCorrente("1", 5000.0, 1, "CORRENTE");
+		Conta cFulano1 = new ContaCorrente("2", 5000.0, 1, "CORRENTE");
+		Conta cFulano2 = new ContaCorrente("3", 5000.0, 1, "CORRENTE");
+		Conta cFulano3 = new ContaCorrente("4", 5000.0, 1, "CORRENTE");
+		Conta cFulano4 = new ContaCorrente("5", 5000.0, 1, "CORRENTE");
+		Conta cFulano11 = new ContaCorrente("22", 5000.0, 2, "CORRENTE");
+		Conta cFulano5 = new ContaCorrente("6", 5000.0, 2, "CORRENTE");
+		Conta cFulano6 = new ContaCorrente("7", 5000.0, 2, "CORRENTE");
+		
+
 
 		usuario.add(fulano);
 		usuario.add(fulano1);
 		usuario.add(fulano2);
 		usuario.add(fulano3);
 		usuario.add(fulano4);
+		usuario.add(fulano11);
+		usuario.add(fulano5);
+		usuario.add(fulano6);
+	
+		
 		contasBanco.add(cFulano);
 		contasBanco.add(cFulano1);
 		contasBanco.add(cFulano2);
 		contasBanco.add(cFulano3);
 		contasBanco.add(cFulano4);
+		contasBanco.add(cFulano11);
+		contasBanco.add(cFulano5);
+		contasBanco.add(cFulano6);
 
+		
+		
 		menuLogin(contasBanco, usuario);
+		
 	}
 
 	public static Usuario autenticarCliente(String cpf, String senha, List<Usuario> usuario) {
@@ -430,6 +449,6 @@ public class menu {
 					break;
 				}
 			} while (x == 1);
-		}
+		}System.out.println(contaBanco.toString());
 	}
 }

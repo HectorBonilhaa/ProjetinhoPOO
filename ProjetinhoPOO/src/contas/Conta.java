@@ -8,25 +8,40 @@ public abstract class Conta implements Tributos {
 	private double saldo;
 	private int agencia;
 	private String tipo;
-	private int numContas = 1;
+	protected  int numContas;
 	static int totalAgencia1 = 0;
 	static int totalAgencia2 = 0;
-	private double totalTributos = 0.0;
-
+	private static double totalTributos = 0.0;
+	public static int contadorContas = 1;
+	
+	
+	
+	
+	
 	// Construtores //
 
 	public Conta() {
 		super();
 	}
 
-	public Conta(String cpf, double saldo, int agencia, String tipo, int numContas) {
+	public Conta(String cpf, double saldo, int agencia, String tipo) {
 		super();
 		this.cpf = cpf;
 		this.saldo = saldo;
 		this.agencia = agencia;
 		this.tipo = tipo;
-		this.numContas += numContas;
-		numContas++;
+				
+		this.numContas=contadorContas;
+		contadorContas++;
+		
+		
+		
+		if(agencia == 1) {
+			totalAgencia1 ++;
+		}else {
+				totalAgencia2 ++;
+			}
+		
 	}
 
 	// Getters and Setters //
@@ -53,9 +68,9 @@ public abstract class Conta implements Tributos {
 
 	public void setAgencia(int agencia) {
 		this.agencia = agencia;
-		if (agencia == 001) {
+		if (agencia == 1) {
 			totalAgencia1++;
-		} else if (agencia == 002) {
+		} else if (agencia == 2) {
 			totalAgencia2++;
 		}
 	}
@@ -83,6 +98,10 @@ public abstract class Conta implements Tributos {
 	public void setTotalTributos(double totalTributos) {
 		this.totalTributos = totalTributos;
 	}
+	
+	public int getContadorContas() {
+		 return contadorContas;
+	}
 
 	// Operações!
 
@@ -97,5 +116,7 @@ public abstract class Conta implements Tributos {
 	public void transferir(double valor, Conta conta) {
 		
 	}
+	
+	
 
 }
