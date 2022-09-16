@@ -8,11 +8,11 @@ public abstract class Conta implements Tributos {
 	private double saldo;
 	private int agencia;
 	private String tipo;
-	protected  int numContas;
+	private int numContas;
 	static int totalAgencia1 = 0;
 	static int totalAgencia2 = 0;
 	private static double totalTributos = 0.0;
-	public static int contadorContas = 1;
+	public static int contadorContas = 0;
 	
 	
 	

@@ -60,10 +60,15 @@ public class RelatorioFuncionarios {
 		buffWrite.append(linha + "\n");
 
 		Collections.sort(usuario);
+		Conta contaValidacao = null;
 		for (int i = 0; i < usuario.size(); i++) {
+			for (Conta contaUsuarioCheck : contasBanco) {
+				if (contaUsuarioCheck.getCpf().equalsIgnoreCase(usuario.get(i).getCpf()))
+					contaValidacao = contaUsuarioCheck;
+			}
 			linha = "************************ \nNome do cliente: " + usuario.get(i).getNome() + "\nCPF do cliente: "
 					+ usuario.get(i).getCpf() + "\nNúmero da agência: " + contasBanco.get(i).getAgencia()
-					+ "\nNúmero da conta: " + contasBanco.get(i).getNumContas() + "\n************************";
+					+ "\nNúmero da conta: " + contaValidacao.getNumContas() + "\n************************";
 			buffWrite.append("\n" + linha + "\n");
 		}
 		linha = "\n--------Fim do relatório--------";
