@@ -1,29 +1,29 @@
 package funcionario;
 
-import java.util.Scanner;
 
-import contas.Conta;
-import enums.PessoaEnum;
+
 
 public class Gerente extends Funcionario {
-	protected PessoaEnum cargo;
+	protected String cargo;
 	private int agencia;
 
 	public Gerente() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Gerente(String nome, String cpf, String senha, PessoaEnum userTipo, int ag) {
-		super(nome, cpf, senha, userTipo);
-		this.cargo = PessoaEnum.GERENTE;
-		this.agencia = ag;
 		
 	}
+public String getCargo() {
+	return this.cargo;
+}
 
-	public PessoaEnum getCargo() {
-		return cargo;
+
+
+	public Gerente(String nome, String cpf, String senha, int ag) {
+		super(nome, cpf, senha);
+		this.cargo = "GERENTE";
+		this.agencia = ag;
 	}
+
+
 
 
 	@Override
@@ -34,12 +34,7 @@ public class Gerente extends Funcionario {
 
 	public void menu() {
 
-		Scanner leitor = new Scanner(System.in);
-		int opcao = 0;
-		int x = 0;
-
-		do {
-
+		
 			System.out.println("**********Bem Vindo " + getNome() + "**********");
 			System.out.println("-----------------------------------------");
 			System.out.println("-----------------------------------------");
@@ -58,37 +53,6 @@ public class Gerente extends Funcionario {
 			System.out.println("8- Sair");
 
 			System.out.println("\n");
-			opcao = leitor.nextInt();
-
-			switch (opcao) {
-			case 1:
-				break;
-
-			case 2:
-				break;
-
-			case 3:
-				break;
-
-			case 4:
-				break;
-
-			case 5:
-				break;
-
-			case 6:
-				break;
-
-			case 7:
-				break;
-
-			case 8:
-				break;
-
-			default:
-				break;
-			}
-		} while (x == 0);
-	}
+		}
 
 }

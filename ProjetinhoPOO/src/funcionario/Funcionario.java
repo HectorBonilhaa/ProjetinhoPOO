@@ -5,27 +5,23 @@ import enums.PessoaEnum;
 
 public abstract class Funcionario extends Usuario {
 	
-	private PessoaEnum cargo;
+	private String cargo;
 	
 	public Funcionario() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
+	public String getCargo() {
+		return this.cargo;
+	}
+
+	public Funcionario(String nome, String cpf, String senha) {
+		super(nome, cpf, senha);
+		this.cargo = "FUNCIONARIO";
+	}
 	
 	
-
-	public Funcionario(String nome, String cpf, String senha, PessoaEnum userTipo) {
-		super(nome, cpf, senha, userTipo);
-		this.cargo = PessoaEnum.FUNCIONARIO;
-	}
-
-
-
-
-	public PessoaEnum getCargo() {
-		return cargo;
-	}
 
 	
 	

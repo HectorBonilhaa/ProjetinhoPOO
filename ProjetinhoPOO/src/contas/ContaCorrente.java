@@ -24,43 +24,43 @@ public class ContaCorrente extends Conta {
 	}
 	// Operações Conta Corrente! //
 
-	@Override
-	public String sacar(double valor) {
+	
+	public void sacar(double valor) {
 		double novoSaldo;
 		if (this.getSaldo() > valor + saque) {
 			novoSaldo = this.getSaldo() - valor - saque;
 			this.setSaldo(novoSaldo);
 			double total = getTotalTributos() + saque;
 			setTotalTributos(total);
-			return "Saque realizado com sucesso!";
+			System.out.println("Saque realizado com sucesso!");
 		} else {
-			return "Saldo insuficiente para saque.";
+			System.out.println("Saldo insuficiente para saque.");
 		}
 	}
 
-	@Override
-	public String depositar(double valor) {
+	
+	public void depositar(double valor) {
 		if (valor > 0) {
 			double novoSaldo = this.getSaldo() + valor - deposito;
 			this.setSaldo(novoSaldo);
 			double total = getTotalTributos() + deposito;
 			setTotalTributos(total);
-			return "Depósito realizado com sucesso!";
+			System.out.println("Depósito realizado com sucesso!");
 		} else {
-			return "Depósito inválido!";
+			System.out.println("Depósito inválido!");
 		}
 	}
 
-	public String transferir(double valor, Conta conta) {
+	public void transferir(double valor, Conta conta) {
 		if (this.getSaldo() > valor + transferencia) {
 			double novoSaldo = getSaldo() - valor - transferencia;
 			this.setSaldo(novoSaldo);
 			conta.setSaldo(conta.getSaldo() + valor);
 			double total = getTotalTributos() + transferencia;
 			setTotalTributos(total);
-			return "Transferência realizada com sucesso!";
+			System.out.println("Transferência realizada com sucesso!");
 		} else {
-			return "Saldo insuficiente para transferência.";
+			System.out.println("Saldo insuficiente para transferência.");
 		}
 	}
 
