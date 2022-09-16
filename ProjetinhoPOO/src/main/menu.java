@@ -15,7 +15,10 @@ import funcionario.Diretor;
 import funcionario.Funcionario;
 import funcionario.Gerente;
 import funcionario.Presidente;
+import relatorios.RelatorioFuncionarios;
 import relatorios.RelatorioTributacao;
+import relatorios.RendimentoPoupanca;
+import relatorios.Saldo;
 
 public class menu {
 	static Scanner input = new Scanner(System.in);
@@ -77,11 +80,18 @@ public class menu {
 
 	public static void menuLogin(List<Conta> contasBanco, List<Usuario> usuario) throws IOException {
 		RelatorioTributacao relatorio1 = new RelatorioTributacao();
+		Saldo relatorioSaldo = new Saldo();
+		RendimentoPoupanca relatorioPoupanca = new RendimentoPoupanca();
+		RelatorioFuncionarios relatorioContas = new RelatorioFuncionarios();
+		RelatorioFuncionarios relatorioUsuarios = new RelatorioFuncionarios();
+		RelatorioFuncionarios relatorioCapital = new RelatorioFuncionarios();
+		Conta contaPoupanca = new ContaPoupanca();
 		Scanner leitor = new Scanner(System.in);
 		String cpf;
 		String senha;
 		Conta contaDestinatario = null;
 		int x = 0;
+		int dias;
 
 		System.out.println("**********Bem Vindo a F.E.J.H.M**********");
 		System.out.println("-----------------------------------------");
@@ -107,6 +117,7 @@ public class menu {
 				cliente.menu();
 				int opcao;
 				double valor;
+				System.out.println("Digite a sua opção: ");
 
 				opcao = leitor.nextInt();
 
@@ -142,6 +153,8 @@ public class menu {
 					break;
 
 				case 4:
+					relatorioSaldo.pathsaldo(cliente, contaBanco);
+					System.out.println("Seu saldo é de: R$ " + contaBanco.getSaldo());
 					x = 1;
 					break;
 
@@ -151,10 +164,16 @@ public class menu {
 					break;
 
 				case 6:
+					System.out.println("Digite o valor a simular: ");
+					valor = leitor.nextDouble();
+					System.out.println("Digite o número de dias para o rendimento: ");
+					dias = leitor.nextInt();
+					relatorioPoupanca.pathRendimento(contaPoupanca, cliente, valor, dias);
 					x = 1;
 					break;
 
 				case 7:
+					System.out.println("Obrigado por utilizar nosso aplicativo! ");
 					x = 0;
 					break;
 
@@ -172,6 +191,7 @@ public class menu {
 
 				int opcao;
 				double valor;
+				System.out.println("Digite a sua opção: ");
 				opcao = leitor.nextInt();
 
 				switch (opcao) {
@@ -205,22 +225,32 @@ public class menu {
 					break;
 
 				case 4:
+					relatorioSaldo.pathsaldo(cliente, contaBanco);
+					System.out.println("Seu saldo é de: R$ " + contaBanco.getSaldo());
 					x = 1;
 					break;
 
 				case 5:
+					relatorio1.pathTributacao(cliente, contaBanco);
 					x = 1;
 					break;
 
 				case 6:
+					System.out.println("Digite o valor a simular: ");
+					valor = leitor.nextDouble();
+					System.out.println("Digite o número de dias para o rendimento: ");
+					dias = leitor.nextInt();
+					relatorioPoupanca.pathRendimento(contaPoupanca, cliente, valor, dias);
 					x = 1;
 					break;
 
-				case 7:
+				case 7:					
+					relatorioContas.totalDeContasSupervisionadas(contaBanco, cliente);
 					x = 1;
 					break;
 
 				case 8:
+					System.out.println("Obrigado por utilizar nosso aplicativo! ");
 					x = 0;
 					break;
 
@@ -239,6 +269,7 @@ public class menu {
 
 				int opcao;
 				double valor;
+				System.out.println("Digite a sua opção: ");
 				opcao = leitor.nextInt();
 
 				switch (opcao) {
@@ -272,26 +303,37 @@ public class menu {
 					break;
 
 				case 4:
+					relatorioSaldo.pathsaldo(cliente, contaBanco);
+					System.out.println("Seu saldo é de: R$ " + contaBanco.getSaldo());
 					x = 1;
 					break;
 
 				case 5:
+					relatorio1.pathTributacao(cliente, contaBanco);
 					x = 1;
 					break;
 
 				case 6:
+					System.out.println("Digite o valor a simular: ");
+					valor = leitor.nextDouble();
+					System.out.println("Digite o número de dias para o rendimento: ");
+					dias = leitor.nextInt();
+					relatorioPoupanca.pathRendimento(contaPoupanca, cliente, valor, dias);
 					x = 1;
 					break;
 
 				case 7:
+					relatorioContas.totalDeContasSupervisionadas(contaBanco, cliente);
 					x = 1;
 					break;
 
 				case 8:
+					relatorioUsuarios.informacaoClientes(contaBanco, cliente, usuario, contasBanco);
 					x = 1;
 					break;
 
 				case 9:
+					System.out.println("Obrigado por utilizar nosso aplicativo! ");
 					x = 0;
 					break;
 
@@ -309,6 +351,7 @@ public class menu {
 
 				int opcao;
 				double valor;
+				System.out.println("Digite a sua opção: ");
 				opcao = leitor.nextInt();
 
 				switch (opcao) {
@@ -342,30 +385,42 @@ public class menu {
 					break;
 
 				case 4:
+					relatorioSaldo.pathsaldo(cliente, contaBanco);
+					System.out.println("Seu saldo é de: R$ " + contaBanco.getSaldo());
 					x = 1;
 					break;
 
 				case 5:
+					relatorio1.pathTributacao(cliente, contaBanco);
 					x = 1;
 					break;
 
 				case 6:
+					System.out.println("Digite o valor a simular: ");
+					valor = leitor.nextDouble();
+					System.out.println("Digite o número de dias para o rendimento: ");
+					dias = leitor.nextInt();
+					relatorioPoupanca.pathRendimento(contaPoupanca, cliente, valor, dias);
 					x = 1;
 					break;
 
 				case 7:
+					relatorioContas.totalDeContasSupervisionadas(contaBanco, cliente);
 					x = 1;
 					break;
 
 				case 8:
+					relatorioUsuarios.informacaoClientes(contaBanco, cliente, usuario, contasBanco);
 					x = 1;
 					break;
 
 				case 9:
+					relatorioCapital.totalDeCapital(contaBanco, cliente, contasBanco);
 					x = 1;
 					break;
 
 				case 10:
+					System.out.println("Obrigado por utilizar nosso aplicativo! ");
 					x = 0;
 					break;
 
