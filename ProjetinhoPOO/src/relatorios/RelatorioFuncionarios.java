@@ -21,8 +21,8 @@ public class RelatorioFuncionarios {
 		Collections.sort(usuario);
 		for (int i = 0; i < usuario.size(); i++) {
 			System.out.println("*****************\nNome do cliente: " + usuario.get(i).getNome() + "\nCPF do cliente: "
-					+ usuario.get(i).getCpf() + "\nNumero da agência: " + contasBanco.get(i).getAgencia()
-					+ "\n*****************" + "numeroConta" + contasBanco.get(i).getNumContas());
+					+ usuario.get(i).getCpf() + "\nNúmero da agência: " + contasBanco.get(i).getAgencia()
+					 + "\nNúmero da conta: " + contasBanco.get(i).getNumContas() + "\n*****************");
 			System.out.println();
 
 		}
@@ -50,11 +50,11 @@ public class RelatorioFuncionarios {
 		String linha = "";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		linha = "***************************************************";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "*****Banco F.E.J.H.M*****";
+		linha = "***********Banco F.E.J.H.M***********\r\n";
 		buffWrite.append(linha + "\n");
-		linha = "--------Relatório: Informações dos clientes--------";
+		linha = "-Relatório: Informações dos clientes-";
 		buffWrite.append("\n" + linha + "\n");
 		linha = "Oi, " + u.getNome();
 		buffWrite.append(linha + "\n");
@@ -71,7 +71,7 @@ public class RelatorioFuncionarios {
 					+ "\nNúmero da conta: " + contaValidacao.getNumContas() + "\n************************";
 			buffWrite.append("\n" + linha + "\n");
 		}
-		linha = "\n--------Fim do relatório--------";
+		linha = "\n---------Fim do relatório---------";
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");
@@ -108,25 +108,21 @@ public class RelatorioFuncionarios {
 		String linha = "";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		linha = "************************************************************";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "****************Banco F.E.J.H.M****************\r\n";
+		linha = "***********Banco F.E.J.H.M***********\r\n";
 		buffWrite.append(linha + "\n");
+		linha = "**************************************";
 		buffWrite.append(linha + "\n");
-		linha = "";
-		buffWrite.append(linha + "\n");
-		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "--------------------Relatório: Total de contas-------------------";
+		linha = "------Relatório: Total de contas------";
 		buffWrite.append("\n" + linha + "\n\n");
 		linha = "Bem vindo, " + u.getNome() + "!";
 		buffWrite.append(linha + "\n");
 		linha = "Gerente: " + conta.getCpf() + "\nTotal de contas supervisionadas: " + total;
 		buffWrite.append(linha + "\n\n");
-		linha = "--------------------------Fim do relatório--------------------------";
+		linha = "-----------Fim do relatório------------";
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
-		buffWrite.append(linha + "\n");
 		buffWrite.append(linha + "\n");
 
 		buffWrite.close();
@@ -158,21 +154,19 @@ public class RelatorioFuncionarios {
 		String linha = "";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		linha = "************************************************************";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "****************Banco F.E.J.H.M****************\r\n";
+		linha = "***********Banco F.E.J.H.M***********\r\n";
 		buffWrite.append(linha + "\n");
-		linha = "";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "-------------Relatório: Total de capital no banco-------------";
+		linha = "-Relatório: Total de capital no banco-";
 		buffWrite.append("\n" + linha + "\n\n");
 		linha = "Bem Vindo, " + u.getNome() + "!";
 		buffWrite.append(linha + "\n");
 		linha = "O capital total no Banco F.E.J.H.M é de: R$  " + capital;
 		buffWrite.append(linha + "\n\n");
-		linha = "-------------------------Fim do relatório--------------------------";
+		linha = "-----------Fim do relatório-----------";
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");

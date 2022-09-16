@@ -28,26 +28,23 @@ public class Saldo {
 		
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
 		String linha = "";
-		linha = "************************************************************"; 
+		linha = "*************************************"; 
 		buffWrite.append(linha + "\n");
-		linha = "****************Banco F.E.J.H.M****************\r\n";
+		linha = "***********Banco F.E.J.H.M***********\r\n";
 		buffWrite.append(linha + "\n");
-		linha = "";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "---------------------------------Saldo-------------------------------";
+		linha = "--------------Saldo------------------";
 		buffWrite.append("\n" + linha + "\n\n");
 		linha = "bem vindo, " + u.getNome() + "!";
 		buffWrite.append(linha + "\n");
 		linha = "Saldo atual: R$ " + conta.getSaldo();
 		buffWrite.append(linha + "\n\n");
-		linha = "---------------------------Fim do saldo---------------------------"; 
+		linha = "-------------Fim do saldo------------"; 
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");
 		
-
 		buffWrite.close();
 	}
 	

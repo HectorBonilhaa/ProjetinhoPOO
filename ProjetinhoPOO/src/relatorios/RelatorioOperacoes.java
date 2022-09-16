@@ -7,13 +7,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import contas.Conta;
+import contas.Tributos;
 import cliente.Usuario;
 
-public class RelatorioOperacoes {
+public class RelatorioOperacoes implements Tributos {
 
 	// RELATÓRIO DEPOSITO //
 
-	public static void pathDeposito(Conta conta, double valor, Usuario usuario) throws IOException {
+	public void pathDeposito(Conta conta, double valor, Usuario usuario) throws IOException {
 		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
@@ -22,27 +23,26 @@ public class RelatorioOperacoes {
 		escritorDeposito(path, conta, usuario, valor);
 	}
 
-	public static void escritorDeposito(String path, Conta conta, Usuario u, double valor) throws IOException {
+	public void escritorDeposito(String path, Conta conta, Usuario u, double valor) throws IOException {
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
 		String linha = "";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		linha = "************************************************************";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "****************Banco F.E.J.H.M****************\r\n";
+		linha = "***********Banco F.E.J.H.M***********\r\n";
 		buffWrite.append(linha + "\n");
-		linha = "";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "-----------------------Relatório de depósito----------------------";
+		linha = "--------Relatório de depósito--------";
 		buffWrite.append("\n" + linha + "\n\n");
 		linha = "Bem vindo, " + u.getNome() + "!";
 		buffWrite.append(linha + "\n");
-		linha = "Agência: " + conta.getAgencia() + "\nValor depositado: R$ " + valor + "\nSaldo: R$ "
-				+ conta.getSaldo();
+		linha = "Agência: " + conta.getAgencia() + "\nValor depositado: R$ " + valor 
+				+ "\nSaldo: R$ " + conta.getSaldo() + "\nValor da tarifa por depósito: " 
+				+ deposito;
 		buffWrite.append(linha + "\n\n");
-		linha = "-------------------------Fim do relatório--------------------------";
+		linha = "----------Fim do relatório----------";
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");
@@ -53,7 +53,7 @@ public class RelatorioOperacoes {
 
 	// RELATÓRIO SAQUE //
 
-	public static void pathSaque(Conta conta, Usuario usuario, double valor) throws IOException {
+	public void pathSaque(Conta conta, Usuario usuario, double valor) throws IOException {
 		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
@@ -62,26 +62,26 @@ public class RelatorioOperacoes {
 		escritorSaque(path, conta, usuario, valor);
 	}
 
-	public static void escritorSaque(String path, Conta conta, Usuario u, double valor) throws IOException {
+	public void escritorSaque(String path, Conta conta, Usuario u, double valor) throws IOException {
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
 		String linha = "";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		linha = "************************************************************";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "****************Banco F.E.J.H.M****************\r\n";
+		linha = "***********Banco F.E.J.H.M***********\r\n";
 		buffWrite.append(linha + "\n");
-		linha = "";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "-------------------------Relatório de saque-----------------------";
+		linha = "----------Relatório de saque----------";
 		buffWrite.append("\n" + linha + "\n\n");
 		linha = "Bem vindo " + u.getNome() + "!";
 		buffWrite.append(linha + "\n");
-		linha = "Agência: " + conta.getAgencia() + "\nValor sacado: R$ " + valor + "\nSaldo: R$ " + conta.getSaldo();
+		linha = "Agência: " + conta.getAgencia() + "\nValor sacado: R$ " + valor 
+				+ "\nSaldo: R$ " + conta.getSaldo() + "\nValor da tarifa por saque: R$ " 
+				+ saque;
 		buffWrite.append(linha + "\n\n");
-		linha = "-------------------------Fim do relatório--------------------------";
+		linha = "-----------Fim do relatório------------";
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");
@@ -92,7 +92,7 @@ public class RelatorioOperacoes {
 
 	// RELATÓRIO TRANSFERÊNCIA //
 
-	public static void pathTransferencia(Conta conta, double valor, Usuario usuario, Usuario destinatario)
+	public void pathTransferencia(Conta conta, double valor, Usuario usuario, Usuario destinatario)
 			throws IOException {
 		final String PATH_BASICO = "..//";
 		final String EXTENSAO = ".txt";
@@ -102,29 +102,29 @@ public class RelatorioOperacoes {
 		escritorTransferencia(path, conta, usuario, valor, destinatario);
 	}
 
-	public static void escritorTransferencia(String path, Conta conta, Usuario u, double valor, Usuario destinatario)
+	public void escritorTransferencia(String path, Conta conta, Usuario u, double valor, Usuario destinatario)
 			throws IOException {
+				
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
 		String linha = "";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		linha = "************************************************************";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "****************Banco F.E.J.H.M****************\r\n";
+		linha = "***********Banco F.E.J.H.M***********\r\n";
 		buffWrite.append(linha + "\n");
-		linha = "";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "-------------------Relatório de Transfer�ncia------------------";
+		linha = "-----Relatório de Transferência------";
 		buffWrite.append("\n" + linha + "\n\n");
 		linha = "Bem vindo, " + u.getNome() + "!";
 		buffWrite.append(linha + "\n");
-		linha = "Agência: " + conta.getAgencia() + "\nValor transferido: R$ " + valor + "\nNome do destinatário: "
+		linha = "Agência: " + conta.getAgencia() + "\nValor transferido: R$ " + valor 
+				+ "\nValor da tarifa por transferência: R$ " + transferencia + "\nNome do destinatário: "
 				+ destinatario.getNome() + "\nCPF do destinatário: " + destinatario.getCpf() + "\n\nSaldo atual: R$ "
-				+ conta.getSaldo();
+				+ conta.getSaldo() ;
 		buffWrite.append(linha + "\n\n");
-		linha = "-------------------------Fim do relatório--------------------------";
+		linha = "----------Fim do relatório----------";
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");

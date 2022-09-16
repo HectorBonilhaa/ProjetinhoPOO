@@ -29,22 +29,21 @@ public class RendimentoPoupanca {
 		String linha = "";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		linha = "************************************************************";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "*****Banco F.E.J.H.M*****";
+		linha = "***********Banco F.E.J.H.M***********";
 		buffWrite.append(linha + "\n");
-		linha = "";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "-------------------Simulação de rendimento: Conta Poupança-------------------";
+		linha = "Simulação de rendimento: Conta Poupança";
 		buffWrite.append("\n" + linha + "\n\n");
 		linha = "Bem vindo, " + u.getNome() + "!";
 		buffWrite.append(linha + "\n");
-		linha = "Agência: " + conta.getAgencia() + "\nValor de aplicação: " + valor + "\nQuantidade de dias: " + dias
-				+ "\nRendimento previsto: " + ((ContaPoupanca) conta).getValorRendimento();
+		linha = "Agência: " + conta.getAgencia() + "\nValor de aplicação: R$" + valor 
+				+ "\nQuantidade de dias: " + dias
+				+ "\nRendimento previsto: R$ " + ((ContaPoupanca) conta).calcularRendimentoPoupanca(valor, dias);
 		buffWrite.append(linha + "\n\n");
-		linha = "--------------------------Fim do relatório--------------------------";
+		linha = "----------Fim do relatório----------";
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");

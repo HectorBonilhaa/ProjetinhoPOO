@@ -16,6 +16,7 @@ import funcionario.Funcionario;
 import funcionario.Gerente;
 import funcionario.Presidente;
 import relatorios.RelatorioFuncionarios;
+import relatorios.RelatorioOperacoes;
 import relatorios.RelatorioTributacao;
 import relatorios.RendimentoPoupanca;
 import relatorios.Saldo;
@@ -98,17 +99,19 @@ public class menu {
 	}
 
 	public static void menuLogin(List<Conta> contasBanco, List<Usuario> usuario) throws IOException {
-		RelatorioTributacao relatorio1 = new RelatorioTributacao();
+		RelatorioTributacao relatorioTributacao = new RelatorioTributacao();
 		Saldo relatorioSaldo = new Saldo();
 		RendimentoPoupanca relatorioPoupanca = new RendimentoPoupanca();
 		RelatorioFuncionarios relatorioContas = new RelatorioFuncionarios();
 		RelatorioFuncionarios relatorioUsuarios = new RelatorioFuncionarios();
 		RelatorioFuncionarios relatorioCapital = new RelatorioFuncionarios();
+		RelatorioOperacoes relatorio = new RelatorioOperacoes();
 		Conta contaPoupanca = new ContaPoupanca();
 		Scanner leitor = new Scanner(System.in);
 		String cpf;
 		String senha;
 		Conta contaDestinatario = null;
+		Usuario usuarioDestinatario = null;
 		int x = 0;
 		int dias;
 
@@ -145,6 +148,7 @@ public class menu {
 					System.out.println("Digite o valor a ser sacado.");
 					valor = leitor.nextDouble();
 					contaBanco.sacar(valor);
+					relatorio.pathSaque(contaBanco, cliente, valor);
 					x = 1;
 					break;
 
@@ -152,6 +156,7 @@ public class menu {
 					System.out.println("Digite o valor a ser depositado.");
 					valor = leitor.nextDouble();
 					contaBanco.depositar(valor);
+					relatorio.pathDeposito(contaBanco, valor, cliente);
 					x = 1;
 					break;
 
@@ -162,12 +167,14 @@ public class menu {
 					cpf = leitor.next();
 
 					contaDestinatario = encontrarConta(cpf, contasBanco);
+					usuarioDestinatario = encontrarUsuario(cpf, usuario);
 
 					if (contaDestinatario != null) {
 						contaBanco.transferir(valor, contaDestinatario);
+						relatorio.pathTransferencia(contaBanco, valor, cliente, usuarioDestinatario);
 					} else
 						System.out.println("Conta não encontrada");
-
+					
 					x = 1;
 					break;
 
@@ -178,7 +185,7 @@ public class menu {
 					break;
 
 				case 5:
-					relatorio1.pathTributacao(cliente, contaBanco);
+					relatorioTributacao.pathTributacao(cliente, contaBanco);
 					x = 1;
 					break;
 
@@ -218,6 +225,7 @@ public class menu {
 					System.out.println("Digite o valor a ser sacado.");
 					valor = leitor.nextDouble();
 					contaBanco.sacar(valor);
+					relatorio.pathSaque(contaBanco, cliente, valor);
 					x = 1;
 					break;
 
@@ -225,6 +233,7 @@ public class menu {
 					System.out.println("Digite o valor a ser depositado.");
 					valor = leitor.nextDouble();
 					contaBanco.depositar(valor);
+					relatorio.pathDeposito(contaBanco, valor, cliente);
 					x = 1;
 					break;
 
@@ -238,6 +247,7 @@ public class menu {
 
 					if (contaDestinatario != null) {
 						contaBanco.transferir(valor, contaDestinatario);
+						relatorio.pathTransferencia(contaBanco, valor, cliente, usuarioDestinatario);
 					} else
 						System.out.println("Conta não encontrada");
 					x = 1;
@@ -250,7 +260,7 @@ public class menu {
 					break;
 
 				case 5:
-					relatorio1.pathTributacao(cliente, contaBanco);
+					relatorioTributacao.pathTributacao(cliente, contaBanco);
 					x = 1;
 					break;
 
@@ -296,6 +306,7 @@ public class menu {
 					System.out.println("Digite o valor a ser sacado.");
 					valor = leitor.nextDouble();
 					contaBanco.sacar(valor);
+					relatorio.pathSaque(contaBanco, cliente, valor);
 					x = 1;
 					break;
 
@@ -303,6 +314,7 @@ public class menu {
 					System.out.println("Digite o valor a ser depositado.");
 					valor = leitor.nextDouble();
 					contaBanco.depositar(valor);
+					relatorio.pathDeposito(contaBanco, valor, cliente);
 					x = 1;
 					break;
 
@@ -316,6 +328,7 @@ public class menu {
 
 					if (contaDestinatario != null) {
 						contaBanco.transferir(valor, contaDestinatario);
+						relatorio.pathTransferencia(contaBanco, valor, cliente, usuarioDestinatario);
 					} else
 						System.out.println("Conta não encontrada");
 					x = 1;
@@ -328,7 +341,7 @@ public class menu {
 					break;
 
 				case 5:
-					relatorio1.pathTributacao(cliente, contaBanco);
+					relatorioTributacao.pathTributacao(cliente, contaBanco);
 					x = 1;
 					break;
 
@@ -378,6 +391,7 @@ public class menu {
 					System.out.println("Digite o valor a ser sacado.");
 					valor = leitor.nextDouble();
 					contaBanco.sacar(valor);
+					relatorio.pathSaque(contaBanco, cliente, valor);
 					x = 1;
 					break;
 
@@ -385,6 +399,7 @@ public class menu {
 					System.out.println("Digite o valor a ser depositado.");
 					valor = leitor.nextDouble();
 					contaBanco.depositar(valor);
+					relatorio.pathDeposito(contaBanco, valor, cliente);
 					x = 1;
 					break;
 
@@ -398,6 +413,7 @@ public class menu {
 
 					if (contaDestinatario != null) {
 						contaBanco.transferir(valor, contaDestinatario);
+						relatorio.pathTransferencia(contaBanco, valor, cliente, usuarioDestinatario);
 					} else
 						System.out.println("Conta não encontrada");
 					x = 1;
@@ -410,7 +426,7 @@ public class menu {
 					break;
 
 				case 5:
-					relatorio1.pathTributacao(cliente, contaBanco);
+					relatorioTributacao.pathTributacao(cliente, contaBanco);
 					x = 1;
 					break;
 
@@ -450,5 +466,14 @@ public class menu {
 				}
 			} while (x == 1);
 		}System.out.println(contaBanco.toString());
+	}
+
+	private static Usuario encontrarUsuario(String cpf, List<Usuario> usuario) {
+		for (Usuario contaUsuario : usuario) {
+			if (contaUsuario.getCpf().equalsIgnoreCase(cpf))
+				return contaUsuario;
+		}
+		
+		return null;
 	}
 }

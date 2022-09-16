@@ -10,7 +10,7 @@ import contas.Conta;
 import contas.Tributos;
 import cliente.Usuario;
 
-public class RelatorioTributacao {
+public class RelatorioTributacao implements Tributos{
 	
 	//	RELATÓRIO TRIBUTAÇÃO //
 	
@@ -29,21 +29,24 @@ public class RelatorioTributacao {
 		String linha = "";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		linha = "************************************************************";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "****************Banco F.E.J.H.M****************\r\n";
+		linha = "***********Banco F.E.J.H.M***********\r\n";
 		buffWrite.append(linha + "\n");
-		linha = "";
+		linha = "*************************************";
 		buffWrite.append(linha + "\n");
-		linha = "************************************************************";
-		buffWrite.append(linha + "\n");
-		linha = "-----------------Tributação da Conta Corrente----------------";
+		linha = "----Tributação da Conta Corrente-----";
 		buffWrite.append("\n" + linha + "\n\n");
 		linha = "Bem vindo, " + u.getNome() + "!";
 		buffWrite.append(linha + "\n");
 		linha = " Você teve um gasto tributário de: R$ " + conta.getTotalTributos();
 		buffWrite.append(linha + "\n\n");
-		linha = "-----------------------Final do relatório de Tributação-----------------------";
+		linha = "----------Valor das tarifas----------";
+		buffWrite.append(linha + "\n\n");
+		linha = "Tarifas:\n" + "Saque: R$ " + saque + "\nDepósito: R$ " + deposito 
+				+ "\nTransferência: R$ " + transferencia;
+		buffWrite.append(linha + "\n\n");
+		linha = "---Final do relatório de Tributação---";
 		buffWrite.append(linha + "\n");
 		linha = "Data: " + formatar.format(date);
 		buffWrite.append(linha + "\n");
