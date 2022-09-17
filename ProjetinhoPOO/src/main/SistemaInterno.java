@@ -20,7 +20,7 @@ import relatorios.RelatorioTributacao;
 import relatorios.RendimentoPoupanca;
 import relatorios.Saldo;
 
-public class menu {
+public class SistemaInterno {
 	static Scanner input = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {
