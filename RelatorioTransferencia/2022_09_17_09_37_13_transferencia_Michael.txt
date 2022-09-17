@@ -1,0 +1,18 @@
+*************************************
+***********Banco F.E.J.H.M***********
+
+*************************************
+
+-----Relatório de Transferência------
+
+Bem vindo, Michael!
+Agência: 1
+Valor transferido: R$ 100.0
+Valor da tarifa por transferência: R$ 0.2
+Nome do destinatário: Suco de uva
+CPF do destinatário: 000.000.000-01
+
+Saldo atual: R$ 9899.8
+
+----------Fim do relatório----------
+Data: 17/09/2022 09:37:13

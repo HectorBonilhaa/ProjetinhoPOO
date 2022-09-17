@@ -1,0 +1,15 @@
+*************************************
+***********Banco F.E.J.H.M***********
+
+*************************************
+
+--------Relatório de depósito--------
+
+Bem vindo, Michael!
+Agência: 1
+Valor depositado: R$ 100.0
+Saldo: R$ 9999.699999999999
+Valor da tarifa por depósito: 0.1
+
+----------Fim do relatório----------
+Data: 17/09/2022 09:37:18
