@@ -12,7 +12,6 @@ import contas.ContaCorrente;
 import contas.ContaPoupanca;
 import enums.PessoaEnum;
 import funcionario.Diretor;
-import funcionario.Funcionario;
 import funcionario.Gerente;
 import funcionario.Presidente;
 import relatorios.RelatorioFuncionarios;
@@ -27,50 +26,63 @@ public class menu {
 	public static void main(String[] args) throws IOException {
 		List<Conta> contasBanco = new ArrayList<>();
 		List<Usuario> usuario = new ArrayList<>();
-		Usuario fulano = new Presidente("Presidente", "1", "1", 1);
-		Usuario fulano1 = new Gerente("gerente", "2", "2", 1);
-		Usuario fulano11 = new Gerente("gerente2", "22", "22", 2);
-		Usuario fulano2 = new Diretor("diretor", "3", "3", 1);
-		Usuario fulano3 = new Cliente("Cliente", "4", "4");
-		Usuario fulano4 = new Diretor("Michael", "5", "5",1);
-		Usuario fulano5 = new Cliente("Jose", "6", "6");
-		Usuario fulano6 = new Cliente("Hector", "7", "7");
+		Usuario user1 = new Presidente("Michael", "123.456.789-95", "171", 1);
+		Usuario user2 = new Gerente("Suco de uva", "000.000.000-01", "2345678", 1);
+		Usuario user3 = new Gerente("Hector", "111.222.333-45", "12345", 2);
+		Usuario user4 = new Diretor("Francisco", "999.888.777-65", "98765", 1);
+		Usuario user5 = new Cliente("Fulano", "456.234.656-87", "123");
+		Usuario user6 = new Diretor("Evanir", "001.002.003.04", "69", 2);
+		Usuario user7 = new Cliente("Jose", "999.999.999-99", "brunosessin123");
+		Usuario user8 = new Cliente("Marcelo", "medaumanotamaxima", "vocemuitolegal");
+		Usuario user9 = new Presidente("GIGACHAD", "PODEROSAO", "999", 2);
+		Usuario user10 = new Cliente("Fulano", "1", "1");
+		Usuario user11 = new Cliente("Fulano2", "2", "2");
+		Usuario user12 = new Cliente("Fulano3", "3", "3");
 
-		Conta cFulano  = new ContaCorrente("1", 5000.0, 1, "CORRENTE");
-		Conta cFulano1 = new ContaCorrente("2", 5000.0, 1, "CORRENTE");
-		Conta cFulano2 = new ContaCorrente("3", 5000.0, 1, "CORRENTE");
-		Conta cFulano3 = new ContaCorrente("4", 5000.0, 1, "CORRENTE");
-		Conta cFulano4 = new ContaCorrente("5", 5000.0, 1, "CORRENTE");
-		Conta cFulano11 = new ContaCorrente("22", 5000.0, 2, "CORRENTE");
-		Conta cFulano5 = new ContaCorrente("6", 5000.0, 2, "CORRENTE");
-		Conta cFulano6 = new ContaCorrente("7", 5000.0, 2, "CORRENTE");
-		
+		Conta ContaUser1  = new ContaCorrente("123.456.789-95", 10000, 1, "CORRENTE");
+		Conta ContaUser2  = new ContaCorrente("000.000.000-01", 10000, 1, "CORRENTE");
+		Conta ContaUser3  = new ContaCorrente("111.222.333-45", 10000, 2, "CORRENTE");
+		Conta ContaUser4  = new ContaCorrente("999.888.777-65", 10000, 1, "CORRENTE");
+		Conta ContaUser5  = new ContaCorrente("456.234.656-87", 10000, 1, "CORRENTE");
+		Conta ContaUser6  = new ContaCorrente("001.002.003.04", 10000, 2, "CORRENTE");
+		Conta ContaUser7  = new ContaCorrente("999.999.999-99", 10000, 2, "CORRENTE");
+		Conta ContaUser8  = new ContaCorrente("medaumanotamaxima", 99999999999999.0, 2, "CORRENTE");
+		Conta ContaUser9  = new ContaCorrente("PODEROSAO", 999999.9, 2, "CORRENTE");
+		Conta ContaUser10 = new ContaCorrente("1",1500.0, 2,"CORRENTE");
+		Conta ContaUser11 = new ContaCorrente("2",1300.0, 1,"CORRENTE");
+		Conta ContaUser12 = new ContaCorrente("3",2000.0, 2,"CORRENTE");
 
+		usuario.add(user1);
+		usuario.add(user2);
+		usuario.add(user3);
+		usuario.add(user4);
+		usuario.add(user5);
+		usuario.add(user6);
+		usuario.add(user7);
+		usuario.add(user8);
+		usuario.add(user9);
+		usuario.add(user10);
+		usuario.add(user11);
+		usuario.add(user12);
 
-		usuario.add(fulano);
-		usuario.add(fulano1);
-		usuario.add(fulano2);
-		usuario.add(fulano3);
-		usuario.add(fulano4);
-		usuario.add(fulano11);
-		usuario.add(fulano5);
-		usuario.add(fulano6);
-	
-		
-		contasBanco.add(cFulano);
-		contasBanco.add(cFulano1);
-		contasBanco.add(cFulano2);
-		contasBanco.add(cFulano3);
-		contasBanco.add(cFulano4);
-		contasBanco.add(cFulano11);
-		contasBanco.add(cFulano5);
-		contasBanco.add(cFulano6);
+		contasBanco.add(ContaUser1);
+		contasBanco.add(ContaUser2);
+		contasBanco.add(ContaUser3);
+		contasBanco.add(ContaUser4);
+		contasBanco.add(ContaUser5);
+		contasBanco.add(ContaUser6);
+		contasBanco.add(ContaUser7);
+		contasBanco.add(ContaUser8);
+		contasBanco.add(ContaUser9);
+		contasBanco.add(ContaUser10);
+		contasBanco.add(ContaUser11);
+		contasBanco.add(ContaUser12);
 
-		
-		
 		menuLogin(contasBanco, usuario);
-		
+
 	}
+
+	// Funções de autenticação
 
 	public static Usuario autenticarCliente(String cpf, String senha, List<Usuario> usuario) {
 		for (Usuario clienteUsuario : usuario) {
@@ -98,7 +110,23 @@ public class menu {
 		return null;
 	}
 
+	private static Usuario encontrarUsuario(String cpf, List<Usuario> usuario) {
+		for (Usuario contaUsuario : usuario) {
+			if (contaUsuario.getCpf().equalsIgnoreCase(cpf))
+				return contaUsuario;
+		}
+
+		return null;
+	}
+
+	// FIM das funções de autenticação
+
+	// Menu principal
+
 	public static void menuLogin(List<Conta> contasBanco, List<Usuario> usuario) throws IOException {
+
+		// Instâncias de relatórios//
+
 		RelatorioTributacao relatorioTributacao = new RelatorioTributacao();
 		Saldo relatorioSaldo = new Saldo();
 		RendimentoPoupanca relatorioPoupanca = new RendimentoPoupanca();
@@ -107,6 +135,11 @@ public class menu {
 		RelatorioFuncionarios relatorioCapital = new RelatorioFuncionarios();
 		RelatorioOperacoes relatorio = new RelatorioOperacoes();
 		Conta contaPoupanca = new ContaPoupanca();
+
+		// FIM//
+
+		// Variáveis importantes e Scanner//
+
 		Scanner leitor = new Scanner(System.in);
 		String cpf;
 		String senha;
@@ -114,6 +147,10 @@ public class menu {
 		Usuario usuarioDestinatario = null;
 		int x = 0;
 		int dias;
+
+		// FIM//
+
+		// Início do menu LOGIN//
 
 		System.out.println("**********Bem Vindo a F.E.J.H.M**********");
 		System.out.println("-----------------------------------------");
@@ -128,10 +165,19 @@ public class menu {
 		Usuario cliente = autenticarCliente(cpf, senha, usuario);
 		Conta contaBanco = autenticarConta(cpf, contasBanco);
 
+		// Validar a senha e cpf do cliente
+		// ***********************************************
+
 		if (cliente == null && contaBanco == null) {
 			System.out.println("Senha ou cpf inválidos");
 			menuLogin(contasBanco, usuario);
 		}
+
+		// ***********************************************
+
+		// Filtro dos diferentes menus disponíveis.
+
+		// Menu do cliente
 
 		if (cliente.getCargo().equalsIgnoreCase(PessoaEnum.CLIENTE.name())) {
 
@@ -174,7 +220,7 @@ public class menu {
 						relatorio.pathTransferencia(contaBanco, valor, cliente, usuarioDestinatario);
 					} else
 						System.out.println("Conta não encontrada");
-					
+
 					x = 1;
 					break;
 
@@ -210,6 +256,11 @@ public class menu {
 				}
 
 			} while (x == 1);
+
+			// FIM do menu do cliente
+
+			// Menu do gerente
+
 		}
 		if (cliente.getCargo().equalsIgnoreCase(PessoaEnum.GERENTE.name())) {
 			do {
@@ -244,6 +295,7 @@ public class menu {
 					cpf = leitor.next();
 
 					contaDestinatario = encontrarConta(cpf, contasBanco);
+					usuarioDestinatario = encontrarUsuario(cpf, usuario);
 
 					if (contaDestinatario != null) {
 						contaBanco.transferir(valor, contaDestinatario);
@@ -273,7 +325,7 @@ public class menu {
 					x = 1;
 					break;
 
-				case 7:					
+				case 7:
 					relatorioContas.totalDeContasSupervisionadas(contaBanco, cliente);
 					x = 1;
 					break;
@@ -290,6 +342,11 @@ public class menu {
 				}
 
 			} while (x == 1);
+
+			// FIM do menu do gerente
+
+			// Menu do diretor
+
 		}
 
 		if (cliente.getCargo().equalsIgnoreCase(PessoaEnum.DIRETOR.name())) {
@@ -325,6 +382,7 @@ public class menu {
 					cpf = leitor.next();
 
 					contaDestinatario = encontrarConta(cpf, contasBanco);
+					usuarioDestinatario = encontrarUsuario(cpf, usuario);
 
 					if (contaDestinatario != null) {
 						contaBanco.transferir(valor, contaDestinatario);
@@ -376,6 +434,11 @@ public class menu {
 				}
 
 			} while (x == 1);
+
+			// FIM do menu do diretor
+
+			// Menu do presidente
+
 		}
 		if (cliente.getCargo().equalsIgnoreCase(PessoaEnum.PRESIDENTE.name())) {
 			do {
@@ -410,6 +473,7 @@ public class menu {
 					cpf = leitor.next();
 
 					contaDestinatario = encontrarConta(cpf, contasBanco);
+					usuarioDestinatario = encontrarUsuario(cpf, usuario);
 
 					if (contaDestinatario != null) {
 						contaBanco.transferir(valor, contaDestinatario);
@@ -465,15 +529,13 @@ public class menu {
 					break;
 				}
 			} while (x == 1);
-		}
-	}
 
-	private static Usuario encontrarUsuario(String cpf, List<Usuario> usuario) {
-		for (Usuario contaUsuario : usuario) {
-			if (contaUsuario.getCpf().equalsIgnoreCase(cpf))
-				return contaUsuario;
+			// FIM do menu do presidente
+
+			// FIM do filtro dos diferentes menus disponíveis.
+			// FIM do programa.
+
+			leitor.close();
 		}
-		
-		return null;
 	}
 }

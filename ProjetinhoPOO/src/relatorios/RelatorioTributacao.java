@@ -10,12 +10,12 @@ import contas.Conta;
 import contas.Tributos;
 import cliente.Usuario;
 
-public class RelatorioTributacao implements Tributos{
-	
-	//	RELATÓRIO TRIBUTAÇÃO //
-	
+public class RelatorioTributacao implements Tributos {
+
+	// RELATÓRIO TRIBUTAÇÃO //
+
 	public void pathTributacao(Usuario u, Conta conta) throws IOException {
-		final String PATH_BASICO = "..\\";
+		final String PATH_BASICO = "..//RelatorioTributacao//";
 		final String EXTENSAO = ".txt";
 		final String OPERACAO = "tributacaoCc";
 		Date date = new Date();
@@ -43,8 +43,8 @@ public class RelatorioTributacao implements Tributos{
 		buffWrite.append(linha + "\n\n");
 		linha = "----------Valor das tarifas----------";
 		buffWrite.append(linha + "\n\n");
-		linha = "Tarifas:\n" + "Saque: R$ " + saque + "\nDepósito: R$ " + deposito 
-				+ "\nTransferência: R$ " + transferencia;
+		linha = "Tarifas:\n" + "Saque: R$ " + saque + "\nDepósito: R$ " + deposito + "\nTransferência: R$ "
+				+ transferencia;
 		buffWrite.append(linha + "\n\n");
 		linha = "---Final do relatório de Tributação---";
 		buffWrite.append(linha + "\n");
@@ -53,5 +53,5 @@ public class RelatorioTributacao implements Tributos{
 
 		buffWrite.close();
 	}
-	//	FIM DO RELATÓRIO DE TRIBUTAÇÃO //
+	// FIM DO RELATÓRIO DE TRIBUTAÇÃO //
 }

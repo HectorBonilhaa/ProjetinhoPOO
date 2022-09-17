@@ -13,7 +13,7 @@ import cliente.Usuario;
 public class RendimentoPoupanca {
 
 	public void pathRendimento(Conta conta, Usuario usuario, double valor, int dias) throws IOException {
-		final String PATH_BASICO = "..//";
+		final String PATH_BASICO = "..//RelatorioRendimento//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");

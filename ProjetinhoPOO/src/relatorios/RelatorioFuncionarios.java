@@ -19,10 +19,15 @@ public class RelatorioFuncionarios {
 
 			throws IOException {
 		Collections.sort(usuario);
+		Conta contaValidacao = null;
 		for (int i = 0; i < usuario.size(); i++) {
+			for (Conta contaUsuarioCheck : contasBanco) {
+				if (contaUsuarioCheck.getCpf().equalsIgnoreCase(usuario.get(i).getCpf()))
+					contaValidacao = contaUsuarioCheck;
+			}
 			System.out.println("*****************\nNome do cliente: " + usuario.get(i).getNome() + "\nCPF do cliente: "
-					+ usuario.get(i).getCpf() + "\nNúmero da agência: " + contasBanco.get(i).getAgencia()
-					 + "\nNúmero da conta: " + contasBanco.get(i).getNumContas() + "\n*****************");
+					+ usuario.get(i).getCpf() + "\nNúmero da agência: " + contaValidacao.getAgencia()
+					 + "\nNúmero da conta: " + contaValidacao.getNumContas() + "\n*****************");
 			System.out.println();
 
 		}
@@ -67,7 +72,7 @@ public class RelatorioFuncionarios {
 					contaValidacao = contaUsuarioCheck;
 			}
 			linha = "************************ \nNome do cliente: " + usuario.get(i).getNome() + "\nCPF do cliente: "
-					+ usuario.get(i).getCpf() + "\nNúmero da agência: " + contasBanco.get(i).getAgencia()
+					+ usuario.get(i).getCpf() + "\nNúmero da agência: " + contaValidacao.getAgencia()
 					+ "\nNúmero da conta: " + contaValidacao.getNumContas() + "\n************************";
 			buffWrite.append("\n" + linha + "\n");
 		}
@@ -141,7 +146,7 @@ public class RelatorioFuncionarios {
 	}
 
 	public static void pathCapital(Conta conta, Usuario usuario, double capital) throws IOException {
-		final String PATH_BASICO = "..//";
+		final String PATH_BASICO = "..//RelatorioCapitalBanco//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");

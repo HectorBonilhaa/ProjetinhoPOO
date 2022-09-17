@@ -15,7 +15,7 @@ public class RelatorioOperacoes implements Tributos {
 	// RELATÓRIO DEPOSITO //
 
 	public void pathDeposito(Conta conta, double valor, Usuario usuario) throws IOException {
-		final String PATH_BASICO = "..//";
+		final String PATH_BASICO = "..//RelatorioDeposito//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
@@ -54,7 +54,7 @@ public class RelatorioOperacoes implements Tributos {
 	// RELATÓRIO SAQUE //
 
 	public void pathSaque(Conta conta, Usuario usuario, double valor) throws IOException {
-		final String PATH_BASICO = "..//";
+		final String PATH_BASICO = "..//RelatorioSaque//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
@@ -94,7 +94,7 @@ public class RelatorioOperacoes implements Tributos {
 
 	public void pathTransferencia(Conta conta, double valor, Usuario usuario, Usuario destinatario)
 			throws IOException {
-		final String PATH_BASICO = "..//";
+		final String PATH_BASICO = "..//RelatorioTransferencia//";
 		final String EXTENSAO = ".txt";
 		Date date = new Date();
 		SimpleDateFormat formatar = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");

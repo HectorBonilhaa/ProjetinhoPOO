@@ -12,7 +12,7 @@ import cliente.Usuario;
 public class Saldo {
 
 	public void pathsaldo(Usuario u, Conta conta) throws IOException {
-		final String PATH_BASICO = "..//";
+		final String PATH_BASICO = "..//RelatorioSaldoUser//";
 		final String EXTENSAO = ".txt";
 		final String OPERACAO = "saldo";
 		Date date = new Date();
