@@ -1,0 +1,15 @@
+*************************************
+***********Banco F.E.J.H.M***********
+
+*************************************
+
+----------Relatório de saque----------
+
+Bem vindo GIGACHAD!
+Agência: 2
+Valor sacado: R$ 10.0
+Saldo: R$ 99989.79999999999
+Valor da tarifa por saque: R$ 0.1
+
+-----------Fim do relatório------------
+Data: 17/09/2022 10:18:37

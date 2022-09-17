@@ -1,0 +1,15 @@
+*************************************
+***********Banco F.E.J.H.M***********
+
+*************************************
+
+----------Relatório de saque----------
+
+Bem vindo Michael!
+Agência: 1
+Valor sacado: R$ 100.0
+Saldo: R$ 9899.9
+Valor da tarifa por saque: R$ 0.1
+
+-----------Fim do relatório------------
+Data: 17/09/2022 10:43:25

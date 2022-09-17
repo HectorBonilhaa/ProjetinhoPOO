@@ -10,4 +10,4 @@ Gerente: 123.456.789-95
 Total de contas supervisionadas: 5
 
 -----------Fim do relatório------------
-Data: 17/09/2022 09:36:51
+Data: 17/09/2022 10:47:20

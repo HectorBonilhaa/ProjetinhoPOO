@@ -1,0 +1,15 @@
+*************************************
+***********Banco F.E.J.H.M***********
+
+*************************************
+
+--------Relatório de depósito--------
+
+Bem vindo, GIGACHAD!
+Agência: 2
+Valor depositado: R$ 10.0
+Saldo: R$ 99999.69999999998
+Valor da tarifa por depósito: 0.1
+
+----------Fim do relatório----------
+Data: 17/09/2022 10:18:39

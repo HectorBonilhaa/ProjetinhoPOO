@@ -6,7 +6,7 @@
 -Relatório: Total de capital no banco-
 
 Bem Vindo, Michael!
-O capital total no Banco F.E.J.H.M é de: R$  1.000000010747989E14
+O capital total no Banco F.E.J.H.M é de: R$  274803.30000000005
 
 -----------Fim do relatório-----------
-Data: 17/09/2022 09:36:49
+Data: 17/09/2022 10:48:46

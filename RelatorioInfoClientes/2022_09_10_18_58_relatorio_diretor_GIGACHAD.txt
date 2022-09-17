@@ -1,0 +1,93 @@
+*************************************
+***********Banco F.E.J.H.M***********
+
+
+-Relatório: Informações dos clientes-
+Oi, GIGACHAD
+
+************************ 
+Nome do cliente: Evanir
+CPF do cliente: 001.002.003.04
+Número da agência: 2
+Número da conta: 6
+************************
+
+************************ 
+Nome do cliente: Francisco
+CPF do cliente: 999.888.777-65
+Número da agência: 1
+Número da conta: 4
+************************
+
+************************ 
+Nome do cliente: Fulano
+CPF do cliente: 456.234.656-87
+Número da agência: 1
+Número da conta: 5
+************************
+
+************************ 
+Nome do cliente: Fulano
+CPF do cliente: 1
+Número da agência: 2
+Número da conta: 10
+************************
+
+************************ 
+Nome do cliente: Fulano2
+CPF do cliente: 2
+Número da agência: 1
+Número da conta: 11
+************************
+
+************************ 
+Nome do cliente: Fulano3
+CPF do cliente: 3
+Número da agência: 2
+Número da conta: 12
+************************
+
+************************ 
+Nome do cliente: GIGACHAD
+CPF do cliente: PODEROSAO
+Número da agência: 2
+Número da conta: 9
+************************
+
+************************ 
+Nome do cliente: Hector
+CPF do cliente: 111.222.333-45
+Número da agência: 2
+Número da conta: 3
+************************
+
+************************ 
+Nome do cliente: Jose
+CPF do cliente: 999.999.999-99
+Número da agência: 2
+Número da conta: 7
+************************
+
+************************ 
+Nome do cliente: Marcelo
+CPF do cliente: medaumanotamaxima
+Número da agência: 2
+Número da conta: 8
+************************
+
+************************ 
+Nome do cliente: Michael
+CPF do cliente: 123.456.789-95
+Número da agência: 1
+Número da conta: 1
+************************
+
+************************ 
+Nome do cliente: Suco de uva
+CPF do cliente: 000.000.000-01
+Número da agência: 1
+Número da conta: 2
+************************
+
+---------Fim do relatório---------
+Data: 17/09/2022 10:18:58

@@ -5,11 +5,11 @@
 
 ----------Relatório de saque----------
 
-Bem vindo Michael!
-Agência: 1
-Valor sacado: R$ 100.0
-Saldo: R$ 9899.599999999999
+Bem vindo Fulano!
+Agência: 2
+Valor sacado: R$ -90.0
+Saldo: R$ 1589.9
 Valor da tarifa por saque: R$ 0.1
 
 -----------Fim do relatório------------
-Data: 17/09/2022 09:37:27
+Data: 17/09/2022 10:35:59

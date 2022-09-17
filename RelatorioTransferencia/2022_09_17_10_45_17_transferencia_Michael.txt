@@ -9,10 +9,10 @@ Bem vindo, Michael!
 Agência: 1
 Valor transferido: R$ 100.0
 Valor da tarifa por transferência: R$ 0.2
-Nome do destinatário: Suco de uva
-CPF do destinatário: 000.000.000-01
+Nome do destinatário: Fulano
+CPF do destinatário: 1
 
-Saldo atual: R$ 9899.8
+Saldo atual: R$ 9899.599999999999
 
 ----------Fim do relatório----------
-Data: 17/09/2022 09:37:13
+Data: 17/09/2022 10:45:17

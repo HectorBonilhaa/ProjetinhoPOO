@@ -6,7 +6,7 @@
 ----Tributação da Conta Corrente-----
 
 Bem vindo, Michael!
- Você teve um gasto tributário de: R$ 0.0
+ Você teve um gasto tributário de: R$ 0.4
 
 ----------Valor das tarifas----------
 
@@ -16,4 +16,4 @@ Depósito: R$ 0.1
 Transferência: R$ 0.2
 
 ---Final do relatório de Tributação---
-Data: 17/09/2022 09:36:57
+Data: 17/09/2022 10:46:10

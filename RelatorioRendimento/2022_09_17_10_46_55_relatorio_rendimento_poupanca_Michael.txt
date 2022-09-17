@@ -1,0 +1,14 @@
+*************************************
+***********Banco F.E.J.H.M***********
+*************************************
+
+Simulação de rendimento: Conta Poupança
+
+Bem vindo, Michael!
+Agência: 0
+Valor de aplicação: R$1000.0
+Quantidade de dias: 60
+Rendimento previsto: R$ 3.3400000000000003
+
+----------Fim do relatório----------
+Data: 17/09/2022 10:46:55

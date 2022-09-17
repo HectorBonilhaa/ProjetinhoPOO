@@ -47,8 +47,8 @@ public class SistemaInterno {
 		Conta ContaUser5  = new ContaCorrente("456.234.656-87", 10000, 1, "CORRENTE");
 		Conta ContaUser6  = new ContaCorrente("001.002.003.04", 10000, 2, "CORRENTE");
 		Conta ContaUser7  = new ContaCorrente("999.999.999-99", 10000, 2, "CORRENTE");
-		Conta ContaUser8  = new ContaCorrente("medaumanotamaxima", 99999999999999.0, 2, "CORRENTE");
-		Conta ContaUser9  = new ContaCorrente("PODEROSAO", 999999.9, 2, "CORRENTE");
+		Conta ContaUser8  = new ContaCorrente("medaumanotamaxima", 99999.0, 2, "CORRENTE");
+		Conta ContaUser9  = new ContaCorrente("PODEROSAO", 99999.9, 2, "CORRENTE");
 		Conta ContaUser10 = new ContaCorrente("1",1500.0, 2,"CORRENTE");
 		Conta ContaUser11 = new ContaCorrente("2",1300.0, 1,"CORRENTE");
 		Conta ContaUser12 = new ContaCorrente("3",2000.0, 2,"CORRENTE");

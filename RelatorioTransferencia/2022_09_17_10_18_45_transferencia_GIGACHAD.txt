@@ -1,0 +1,18 @@
+*************************************
+***********Banco F.E.J.H.M***********
+
+*************************************
+
+-----Relatório de Transferência------
+
+Bem vindo, GIGACHAD!
+Agência: 2
+Valor transferido: R$ 10.0
+Valor da tarifa por transferência: R$ 0.2
+Nome do destinatário: Fulano
+CPF do destinatário: 1
+
+Saldo atual: R$ 99989.49999999999
+
+----------Fim do relatório----------
+Data: 17/09/2022 10:18:45
