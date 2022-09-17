@@ -50,7 +50,7 @@ public class ContaCorrente extends Conta {
 
 	
 	public void depositar(double valor) {
-		if (valor > 0) {
+		if (valor > 0 + deposito) {
 			double novoSaldo = this.getSaldo() + valor - deposito;
 			this.setSaldo(novoSaldo);
 			double total = getTotalTributos() + deposito;
@@ -58,6 +58,8 @@ public class ContaCorrente extends Conta {
 			System.out.println("Depósito realizado com sucesso!");
 		} else {
 			System.out.println("Depósito inválido!");
+			
+			//Exception personalizado//
 			throw new DepositoException("Impossível realizar um depósito com um valor negativo");
 		}
 	}

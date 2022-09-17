@@ -26,15 +26,16 @@ public class menu {
 	public static void main(String[] args) throws IOException {
 		List<Conta> contasBanco = new ArrayList<>();
 		List<Usuario> usuario = new ArrayList<>();
-		Usuario user1 = new Presidente("Michael", "123.456.789-95", "171", 1);
-		Usuario user2 = new Gerente("Suco de uva", "000.000.000-01", "2345678", 1);
-		Usuario user3 = new Gerente("Hector", "111.222.333-45", "12345", 2);
-		Usuario user4 = new Diretor("Francisco", "999.888.777-65", "98765", 1);
-		Usuario user5 = new Cliente("Fulano", "456.234.656-87", "123");
-		Usuario user6 = new Diretor("Evanir", "001.002.003.04", "69", 2);
-		Usuario user7 = new Cliente("Jose", "999.999.999-99", "brunosessin123");
-		Usuario user8 = new Cliente("Marcelo", "medaumanotamaxima", "vocemuitolegal");
-		Usuario user9 = new Presidente("GIGACHAD", "PODEROSAO", "999", 2);
+		
+		Usuario user1  = new Presidente("Michael", "123.456.789-95", "171", 1);
+		Usuario user2  = new Gerente("Suco de uva", "000.000.000-01", "2345678", 1);
+		Usuario user3  = new Gerente("Hector", "111.222.333-45", "12345", 2);
+		Usuario user4  = new Diretor("Francisco", "999.888.777-65", "98765", 1);
+		Usuario user5  = new Cliente("Fulano", "456.234.656-87", "123");
+		Usuario user6  = new Diretor("Evanir", "001.002.003.04", "69", 2);
+		Usuario user7  = new Cliente("Jose", "999.999.999-99", "brunosessin123");
+		Usuario user8  = new Cliente("Marcelo", "medaumanotamaxima", "vocemuitolegal");
+		Usuario user9  = new Presidente("GIGACHAD", "PODEROSAO", "999", 2);
 		Usuario user10 = new Cliente("Fulano", "1", "1");
 		Usuario user11 = new Cliente("Fulano2", "2", "2");
 		Usuario user12 = new Cliente("Fulano3", "3", "3");
