@@ -169,7 +169,7 @@ public class SistemaInterno {
 		// Validar a senha e cpf do cliente
 		// ***********************************************
 
-		if (cliente == null && contaBanco == null) {
+		if (cliente == null || contaBanco == null) {
 			System.out.println("Senha ou cpf inválidos");
 			menuLogin(contasBanco, usuario);
 		}
